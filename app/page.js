@@ -75,7 +75,7 @@ export default function Home() {
               onClick={scrollToHome}
               className="bg-green-700 hover:bg-green-800 text-white font-semibold text-2lg sm:text-2xl py-4 px-20 rounded transition duration-200"
             >
-              Let's Begin
+              Let&apos;s Begin
             </button>
           </div>
         </div>
@@ -91,7 +91,7 @@ export default function Home() {
           <div className="space-x-8 text-lg font-medium text-white font-[lato]">
             <a href="#home" className="hover:text-white">Home</a>
             <a href="#about" className="hover:text-white">About</a>
-            <a href="/portfolio" className="hover:text-white">My Portfolio</a> {/* <-- Changed here */}
+            <Link href="/portfolio" className="hover:text-white">My Portfolio</Link> {/* <-- Changed here */}
             <a href="#skills" className="hover:text-white">Profile & Skills</a>
             <a
                 href="https://wa.me/94771234567"

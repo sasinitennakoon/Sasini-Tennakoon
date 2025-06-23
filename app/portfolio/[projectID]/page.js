@@ -2,7 +2,7 @@
 import React from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import Image from 'next/image';
-import { Bellota_Text, Cormorant_Garamond, DM_Sans, Estonia, Geologica, Inder, Inknut_Antiqua, Inter, Inder, Libre_Baskerville, Merriweather, Playfair_Display, Poppins, Roboto } from 'next/font/google';
+import { Bellota_Text, Cormorant_Garamond, DM_Sans, Estonia, Geologica, Inknut_Antiqua, Inter, Inder, Libre_Baskerville, Merriweather, Playfair_Display, Poppins, Roboto } from 'next/font/google';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 
