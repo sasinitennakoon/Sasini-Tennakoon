@@ -253,7 +253,7 @@ const projectDetails = [
     },
     coverImage: '/images/Cover/B.png',
     wireframes: ['/images/Book1.png', '/images/Book2.png', '/images/Book3.png','/images/Book4.png'],
-    uiMobileImages: ['/images/BookWelcome.png','/images/BookLogin.png', '/images/BookSign.png', '/images/BookLanding.png', '/images/Book Shelf.png', '/images/Community.png', '/images/User Profile.png'],
+    uiMobileImages: ['/images/BookWelcome.png','/images/BookLogin.png', '/images/BookSign.png', '/images/BookLanding.png', '/images/Community.png', '/images/User Profile.png'],
     uiDesktopImages:[],
     designSystem: {
       typography: [
