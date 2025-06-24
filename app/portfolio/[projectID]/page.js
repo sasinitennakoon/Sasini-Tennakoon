@@ -357,7 +357,7 @@ const projectDetails = [
     },
     coverImage: '/images/Cover/E.png',
     wireframes: ['/images/eco/1.png', '/images/eco/2 (2).png', '/images/eco/3.png','/images/eco/4 (2).png','/images/eco/5.png','/images/eco/6.png','/images/eco/7.png','/images/eco/8.png'],
-    uiMobileImages: ['/images/eco/Welcome Screen.png','/images/eco/Login.png','/images/eco/Signup.png','/images/eco/Home Page.png','/images/eco/Product Page.png','/images/eco/order page.png'],
+    uiMobileImages: ['/images/eco/Welcome Screen.png','/images/eco/Login.png','/images/eco/Signup.png','/images/eco/Home Page.png','/images/eco/Product Page.png','/images/eco/order page.png','/images/eco/Cart Page.png'],
     uiDesktopImages: [],
     designSystem: {
       typography: [
