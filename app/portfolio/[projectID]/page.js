@@ -357,7 +357,7 @@ const projectDetails = [
     },
     coverImage: '/images/Cover/E.png',
     wireframes: ['/images/eco/1.png', '/images/eco/2 (2).png', '/images/eco/3.png','/images/eco/4 (2).png','/images/eco/5.png','/images/eco/6.png','/images/eco/7.png','/images/eco/8.png'],
-    uiMobileImages: ['/images/eco/Welcome Screen.png','/images/eco/Login Page.png','/images/eco/Signup.png','/images/eco/Home Page.png','/images/eco/Product Page.png','/images/eco/Cart Page.png','/images/eco/User Page.png'],
+    uiMobileImages: ['/images/eco/Welcome Screen.png','/images/eco/Login.png','/images/eco/Signup.png','/images/eco/Home Page.png','/images/eco/Product Page.png','/images/eco/Cart Page.png','/images/eco/order page.png'],
     uiDesktopImages: [],
     designSystem: {
       typography: [
@@ -460,7 +460,7 @@ const projectDetails = [
     },
     coverImage: '/images/Cover/U.png',
     wireframes: ['/images/utili/w1.png', '/images/utili/w2.png', '/images/utili/w3.png','/images/utili/w4.png','/images/utili/w5.png','/images/utili/w6.png','/images/utili/FigJam basics.png'],
-    uiMobileImages: ['/images/utili/Home page (1).png','/images/utili/Bill Calculation.png', '/images/utili/elpopup screen.png', '/images/utili/Sign up page - 4.jpg', '/images/utili/popup screen.png', '/images/utili/Water Consumption.png', '/images/utili/bill.png'],
+    uiMobileImages: ['/images/utili/Home page (1).png','/images/utili/Bill Calculation.png', '/images/utili/elpopup screen.png', '/images/utili/Signup.jpg', '/images/utili/popup screen.png', '/images/utili/Water.png', '/images/utili/bill.png'],
     uiDesktopImages: [],
     designSystem: {
       typography: [
