@@ -104,16 +104,16 @@ const StoryCard = ({ project }) => {
       '/images/waste/Profile.png',
       '/images/waste/Recycling Partner details.png',
       '/images/waste/Redeemable Points.png',
-      '/images/waste/Profile (1).png',
+      '/images/waste/Profile (1).png'
     ],
     'utili-track': [
       '/images/utili/Home page (1).png',
       '/images/utili/popup screen.png',
       '/images/utili/Water Consumption.png',
-      
+      '/images/utili/bill.png',
       '/images/utili/elpopup screen.png',
-      
-      '/images/utili/Bill Calculation.png',
+      '/images/utili/Power Consumption.png',
+      '/images/utili/Bill Calculation.png'
     ],
     'kokos': [
       '/images/koko/1.png',
@@ -121,7 +121,7 @@ const StoryCard = ({ project }) => {
       '/images/koko/3.png',
       '/images/koko/4.png',
       '/images/koko/5.png',
-      '/images/koko/6.png',
+      '/images/koko/6.png'
     ]
   };
 
