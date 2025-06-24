@@ -95,7 +95,7 @@ const StoryCard = ({ project }) => {
     'eco-shopper': [
       '/images/eco/Home Page.png',
       '/images/eco/Product Page.png',
-      '/images/eco/Cart page.png',
+      '/images/eco/order page.png',
       '/images/eco/Category Page (1).png',
       '/images/eco/Cart Page (1).png'
     ],
