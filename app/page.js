@@ -94,7 +94,7 @@ export default function Home() {
             <Link href="/portfolio" className="hover:text-white">My Portfolio</Link> {/* <-- Changed here */}
             <a href="#skills" className="hover:text-white">Profile & Skills</a>
             <a
-                href="https://wa.me/94771234567"
+                href="https://wa.me/94776552988"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-white"
@@ -118,10 +118,10 @@ export default function Home() {
               <div className="lg:w-1/2">
                 <div className="relative w-full h-full">
                   <Image
-                    src="/profile.jpeg"
+                    src="/profile2.jpeg"
                     alt="Sasini Tennakoon"
                     width={600}
-                    height={800}
+                    height={100}
                     className="rounded-lg object-cover w-full h-auto"
                     style={{
                       objectPosition: 'left center'
@@ -243,9 +243,9 @@ export default function Home() {
       { name: 'Xd', icon: '/Xd.png' },
       { name: 'Photoshop', icon: '/Photoshop.png' },
       { name: 'Premiere Pro', icon: '/Premiere Pro.png' },
-      { name: 'Next.js', icon: '/nextjs.png' },
-      { name: 'Type Script', icon: '/type.png' },
-      { name: 'React', icon: '/react.png' },
+      { name: 'Next.js', icon: '/Next.js_Logo_1.png' },
+      { name: 'Type Script', icon: '/types.png' },
+      { name: 'React', icon: '/re.png' },
 
     ].map((skill) => (
       <div key={skill.name} className="flex flex-col items-center">

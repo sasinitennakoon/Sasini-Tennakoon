@@ -95,9 +95,9 @@ const StoryCard = ({ project }) => {
     'eco-shopper': [
       '/images/eco/Home Page.png',
       '/images/eco/Product Page.png',
-      '/image/eco/Category Page (1).png',
-      '/image/eco/Category Page (1).png',
-      '/image/eco/Cart Page (1).png'
+      '/images/eco/Cart page.png',
+      '/images/eco/Category Page (1).png',
+      '/images/eco/Cart Page (1).png'
     ],
     'waste-wizard': [
       '/images/waste/Dashboard.png',
@@ -262,7 +262,7 @@ const projectDetails = [
           className: libreBaskerville.className,
           usage: 'Headings',
           sample: 'Aa',
-          paragraph: 'BookNest Mobile App',
+          paragraph: 'Aa, Bb, Cc, Dd, Ee, Ff, Gg ,Hh ,Ii, Jj, Kk ,Ll ,Mm, Nn, Oo, Pp, Qq ,Rr, Ss ,Tt, Uu ,Vv ,Ww ,Xx ,Yy, Zz',
           numbers: '1234567890'
         },
         {
@@ -270,7 +270,7 @@ const projectDetails = [
           className: merriweather.className,
           usage: 'Body text',
           sample: 'Aa',
-          paragraph: 'BookNest Mobile App',
+          paragraph: 'Aa, Bb, Cc, Dd, Ee, Ff, Gg ,Hh ,Ii, Jj, Kk ,Ll ,Mm, Nn, Oo, Pp, Qq ,Rr, Ss ,Tt, Uu ,Vv ,Ww ,Xx ,Yy, Zz',
           numbers: '1234567890'
         },
         {
@@ -278,7 +278,7 @@ const projectDetails = [
           className: geologica.className,
           usage: 'Body text',
           sample: 'Aa',
-          paragraph: 'BookNest Mobile App',
+          paragraph: 'Aa, Bb, Cc, Dd, Ee, Ff, Gg ,Hh ,Ii, Jj, Kk ,Ll ,Mm, Nn, Oo, Pp, Qq ,Rr, Ss ,Tt, Uu ,Vv ,Ww ,Xx ,Yy, Zz',
           numbers: '1234567890'
         }
       ],
@@ -314,7 +314,7 @@ const projectDetails = [
           className: playfair_display.className,
           usage: 'Headings',
           sample: 'Aa',
-          paragraph: 'Dinuka\'s portfolio',
+          paragraph: 'Aa, Bb, Cc, Dd, Ee, Ff, Gg ,Hh ,Ii, Jj, Kk ,Ll ,Mm, Nn, Oo, Pp, Qq ,Rr, Ss ,Tt, Uu ,Vv ,Ww ,Xx ,Yy, Zz',
           numbers: '1234567890'
         },
         {
@@ -322,7 +322,7 @@ const projectDetails = [
           className: cormorant_garamond.className,
           usage: 'Body text',
           sample: 'Aa',
-          paragraph: 'Dinuka\'s portfolio',
+          paragraph: 'Aa, Bb, Cc, Dd, Ee, Ff, Gg ,Hh ,Ii, Jj, Kk ,Ll ,Mm, Nn, Oo, Pp, Qq ,Rr, Ss ,Tt, Uu ,Vv ,Ww ,Xx ,Yy, Zz',
           numbers: '1234567890'
         },
         {
@@ -330,7 +330,7 @@ const projectDetails = [
           className: dm_sans.className,
           usage: 'Body text',
           sample: 'Aa',
-          paragraph: 'Dinuka\'s portfolio',
+          paragraph: 'Aa, Bb, Cc, Dd, Ee, Ff, Gg ,Hh ,Ii, Jj, Kk ,Ll ,Mm, Nn, Oo, Pp, Qq ,Rr, Ss ,Tt, Uu ,Vv ,Ww ,Xx ,Yy, Zz',
           numbers: '1234567890'
         }
       ],
@@ -366,7 +366,7 @@ const projectDetails = [
           className: roboto.className,
           usage: 'Headings',
           sample: 'Aa',
-          paragraph: 'Eco Shopper Mobile App',
+          paragraph: 'Aa, Bb, Cc, Dd, Ee, Ff, Gg ,Hh ,Ii, Jj, Kk ,Ll ,Mm, Nn, Oo, Pp, Qq ,Rr, Ss ,Tt, Uu ,Vv ,Ww ,Xx ,Yy, Zz',
           numbers: '1234567890'
         },
         {
@@ -374,7 +374,7 @@ const projectDetails = [
           className: inter.className,
           usage: 'Body text',
           sample: 'Aa',
-          paragraph: 'Eco Shopper Mobile App',
+          paragraph: 'Aa, Bb, Cc, Dd, Ee, Ff, Gg ,Hh ,Ii, Jj, Kk ,Ll ,Mm, Nn, Oo, Pp, Qq ,Rr, Ss ,Tt, Uu ,Vv ,Ww ,Xx ,Yy, Zz',
           numbers: '1234567890'
         }
       ],
@@ -410,7 +410,7 @@ const projectDetails = [
           className: inter.className,
           usage: 'Headings',
           sample: 'Aa',
-          paragraph: 'Waste Wizard Mobile App',
+          paragraph: 'Aa, Bb, Cc, Dd, Ee, Ff, Gg ,Hh ,Ii, Jj, Kk ,Ll ,Mm, Nn, Oo, Pp, Qq ,Rr, Ss ,Tt, Uu ,Vv ,Ww ,Xx ,Yy, Zz',
           numbers: '1234567890'
         },
         {
@@ -418,7 +418,7 @@ const projectDetails = [
           className: inder.className,
           usage: 'Body text',
           sample: 'Aa',
-          paragraph: 'Waste Wizard Mobile App',
+          paragraph:'Aa, Bb, Cc, Dd, Ee, Ff, Gg ,Hh ,Ii, Jj, Kk ,Ll ,Mm, Nn, Oo, Pp, Qq ,Rr, Ss ,Tt, Uu ,Vv ,Ww ,Xx ,Yy, Zz',
           numbers: '1234567890'
         },
         {
@@ -426,7 +426,7 @@ const projectDetails = [
           className: inter.className,
           usage: 'Body text',
           sample: 'Aa',
-          paragraph: 'Waste Wizard Mobile App',
+          paragraph:'Aa, Bb, Cc, Dd, Ee, Ff, Gg ,Hh ,Ii, Jj, Kk ,Ll ,Mm, Nn, Oo, Pp, Qq ,Rr, Ss ,Tt, Uu ,Vv ,Ww ,Xx ,Yy, Zz',
           numbers: '1234567890'
         },
         {
@@ -434,7 +434,7 @@ const projectDetails = [
           className: inknut_Antiqua.className,
           usage: 'Body text',
           sample: 'Aa',
-          paragraph: 'Waste Wizard Mobile App',
+          paragraph: 'Aa, Bb, Cc, Dd, Ee, Ff, Gg ,Hh ,Ii, Jj, Kk ,Ll ,Mm, Nn, Oo, Pp, Qq ,Rr, Ss ,Tt, Uu ,Vv ,Ww ,Xx ,Yy, Zz',
           numbers: '1234567890'
         }
       ],
@@ -469,7 +469,7 @@ const projectDetails = [
           className: inter.className,
           usage: 'Headings',
           sample: 'Aa',
-          paragraph: 'Utilitrack Mobile App',
+          paragraph: 'Aa, Bb, Cc, Dd, Ee, Ff, Gg ,Hh ,Ii, Jj, Kk ,Ll ,Mm, Nn, Oo, Pp, Qq ,Rr, Ss ,Tt, Uu ,Vv ,Ww ,Xx ,Yy, Zz',
           numbers: '1234567890'
         },
         {
@@ -477,7 +477,7 @@ const projectDetails = [
           className: bellota_text.className,
           usage: 'Body text',
           sample: 'Aa',
-          paragraph: 'Utilitrack Mobile App',
+          paragraph: 'Aa, Bb, Cc, Dd, Ee, Ff, Gg ,Hh ,Ii, Jj, Kk ,Ll ,Mm, Nn, Oo, Pp, Qq ,Rr, Ss ,Tt, Uu ,Vv ,Ww ,Xx ,Yy, Zz',
           numbers: '1234567890'
         }
       ],
@@ -517,7 +517,7 @@ const projectDetails = [
           className: poppins.className,
           usage: 'Headings',
           sample: 'Aa',
-          paragraph: 'The quick brown fox jumps over the lazy dog',
+          paragraph: 'Aa, Bb, Cc, Dd, Ee, Ff, Gg ,Hh ,Ii, Jj, Kk ,Ll ,Mm, Nn, Oo, Pp, Qq ,Rr, Ss ,Tt, Uu ,Vv ,Ww ,Xx ,Yy, Zz',
           numbers: '1234567890'
         },
         {
@@ -525,7 +525,7 @@ const projectDetails = [
           className: estonia.className,
           usage: 'Body text',
           sample: 'Aa',
-          paragraph: 'The quick brown fox jumps over the lazy dog',
+          paragraph: 'Aa, Bb, Cc, Dd, Ee, Ff, Gg ,Hh ,Ii, Jj, Kk ,Ll ,Mm, Nn, Oo, Pp, Qq ,Rr, Ss ,Tt, Uu ,Vv ,Ww ,Xx ,Yy, Zz',
           numbers: '1234567890'
         },
         {
@@ -533,7 +533,7 @@ const projectDetails = [
           className: inter.className,
           usage: 'Body text',
           sample: 'Aa',
-          paragraph: 'The quick brown fox jumps over the lazy dog',
+          paragraph: 'Aa, Bb, Cc, Dd, Ee, Ff, Gg ,Hh ,Ii, Jj, Kk ,Ll ,Mm, Nn, Oo, Pp, Qq ,Rr, Ss ,Tt, Uu ,Vv ,Ww ,Xx ,Yy, Zz',
           numbers: '1234567890'
         }
       ],
@@ -687,7 +687,7 @@ useEffect(() => {
             </div>
           </div>
           <div className="hidden md:block w-[1px] bg-gray-400 h-24" />
-          <div className="w-full md:w-[80%] text-base md:text-lg text-gray-800 text-justify leading-relaxed">
+          <div className="w-full md:w-[80%] text-base md:text-lg text-black text-justify leading-relaxed">
             {project.description.overview}
           </div>
         </div>
@@ -699,7 +699,7 @@ useEffect(() => {
               Problem
             </div>
           </div>
-          <div className="hidden md:block w-[1px] bg-gray-400 h-24" />
+          <div className="hidden md:block w-[1px] bg-black h-24" />
           <div className="w-full md:w-[80%] text-base md:text-lg text-gray-800 text-justify leading-relaxed">
             {project.description.problem}
           </div>
@@ -712,7 +712,7 @@ useEffect(() => {
               Research
             </div>
           </div>
-          <div className="hidden md:block w-[1px] bg-gray-400 h-24" />
+          <div className="hidden md:block w-[1px] bg-black h-24" />
           <div className="w-full md:w-[80%] text-base md:text-lg text-gray-800 text-justify leading-relaxed">
             {project.description.research}
           </div>
