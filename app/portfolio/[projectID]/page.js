@@ -110,9 +110,9 @@ const StoryCard = ({ project }) => {
       '/images/utili/Home page (1).png',
       '/images/utili/popup screen.png',
       '/images/utili/Water Consumption.png',
-      '/images/utili/Bill.png',
+      
       '/images/utili/elpopup screen.png',
-      '/images/utili/Power consumption.png',
+      
       '/images/utili/Bill Calculation.png',
     ],
     'kokos': [
