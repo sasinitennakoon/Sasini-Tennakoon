@@ -248,7 +248,7 @@ const projectDetails = [
     subtitle: 'A social app for book lovers',
     description: {
       overview: "BookNest is a mobile application designed for book lovers to connect, share, and discover new reads in a vibrant, social environment. Inspired by the idea of bringing together a community of readers, BookNest blends social networking features with personalized book management tools. Users can build virtual bookshelves, track their reading progress, post reviews, and interact with fellow readers through groups and chats. The app is crafted with a clean and cozy UI, ensuring a seamless experience for users across all ages. Whether you're a casual reader or a passionate bibliophile, BookNest offers a dedicated space to celebrate your love for books and connect with like-minded individuals.",
-      problem: "In today's digital world, while there are plenty of platforms for general social interaction, there&apos;s a lack of dedicated, engaging spaces for book lovers to connect and share their reading experiences. Existing apps either focus solely on cataloging books or provide overly complex features that can overwhelm users. Additionally, bookworms often face difficulties tracking and organizing their reading habits across different platforms. They experience limited interaction with like-minded readers, especially around specific genres or interests. There is also a lack of personalized discovery features for new books based on community recommendations and a disconnected experience between managing personal book collections and participating in reading communities. BookNest was designed to address these pain points by combining simplicity, community, and personalization in one cohesive platform.",
+      problem: "In today's digital world, while there are plenty of platforms for general social interaction, there's a lack of dedicated, engaging spaces for book lovers to connect and share their reading experiences. Existing apps either focus solely on cataloging books or provide overly complex features that can overwhelm users. Additionally, bookworms often face difficulties tracking and organizing their reading habits across different platforms. They experience limited interaction with like-minded readers, especially around specific genres or interests. There is also a lack of personalized discovery features for new books based on community recommendations and a disconnected experience between managing personal book collections and participating in reading communities. BookNest was designed to address these pain points by combining simplicity, community, and personalization in one cohesive platform.",
       research: "To better understand the needs of book readers and identify opportunities for improvement, I explored several popular book-related apps. The goal was to analyze their strengths, weaknesses, and the overall user experience they offered. I observed that many apps had overly complex or cluttered interfaces, making it hard for casual users to engage regularly. Many lacked a strong community or interactive features, so users couldn't easily connect, comment, or chat with others about books. Personalized recommendations were often limited or not visually engaging, and while tracking reading progress was available, it often lacked motivational features or a friendly UI. Offline features and smooth mobile-first experiences were also underdeveloped. These insights revealed a clear gap for a user-friendly, community-centered app that makes reading more social, visually inviting, and organized. These observations formed the foundation for BookNest—an app focused not just on books, but on the people who read them."
     },
     coverImage: '/images/Cover/B.png',
@@ -294,14 +294,14 @@ const projectDetails = [
   },
     
 
-  {
+  {// eslint-disable-next-line react/no-unescaped-entities
     id: 'dinuka-portfolio',
     title: 'Dinuka\'s Portfolio',
     subtitle: 'A clean and modern  personal portfolio, created in Figma.',
     description: {
-      overview: "Dinuka&apos;s Portfolio is a clean, modern, and responsive web-based portfolio designed for Dinuka Gunawardane, a creative professional specializing in photography, videography, and graphic design. The goal was to create a platform that reflects Dinuka&apos;s unique style and showcases his best work to potential clients and collaborators. The website features categorized galleries, a blog section for updates, and a contact form to streamline inquiries. Built with Next.js and Tailwind CSS, the portfolio ensures fast loading, mobile responsiveness, and a user-friendly experience.",
+      overview: "Dinuka's Portfolio is a clean, modern, and responsive web-based portfolio designed for Dinuka Gunawardane, a creative professional specializing in photography, videography, and graphic design. The goal was to create a platform that reflects Dinuka's unique style and showcases his best work to potential clients and collaborators. The website features categorized galleries, a blog section for updates, and a contact form to streamline inquiries. Built with Next.js and Tailwind CSS, the portfolio ensures fast loading, mobile responsiveness, and a user-friendly experience.",
       problem: "Freelancers and creative professionals like Dinuka often rely on social media or outdated portfolio websites, which lack structure, personalization, or professionalism. Common issues include an inconsistent or unprofessional online presence, difficult navigation, and poor mobile compatibility. Additionally, such sites often fail to effectively showcase work across different creative domains or provide integrated client communication and inquiry features. Dinuka needed a centralized digital space that would not only represent his creative identity but also provide a smooth and engaging experience for visitors.",
-      research: "To craft an effective solution, I analyzed various creative portfolio websites and identified design patterns, content organization, and usability challenges. Input gathered directly from Dinuka helped to understand his needs and preferences. I found that most portfolios favored either minimalism or over-design, so a balance between clean design and creativity was essential. Many portfolios lacked mobile responsiveness, making them hard to view on phones or tablets. Users expected clearly separated sections for each creative service, such as photography and videography. A smooth project showcase with thumbnails, preview images, and short descriptions was a highly effective way to engage visitors. Including a client testimonial or blog section builds trust and establishes credibility. These insights guided the design and structure of Dinuka&apos;s new portfolio, ensuring it meets both functional needs and visual appeal."
+      research: "To craft an effective solution, I analyzed various creative portfolio websites and identified design patterns, content organization, and usability challenges. Input gathered directly from Dinuka helped to understand his needs and preferences. I found that most portfolios favored either minimalism or over-design, so a balance between clean design and creativity was essential. Many portfolios lacked mobile responsiveness, making them hard to view on phones or tablets. Users expected clearly separated sections for each creative service, such as photography and videography. A smooth project showcase with thumbnails, preview images, and short descriptions was a highly effective way to engage visitors. Including a client testimonial or blog section builds trust and establishes credibility. These insights guided the design and structure of Dinuka's new portfolio, ensuring it meets both functional needs and visual appeal."
     },
     coverImage: '/images/Cover/D.png',
     wireframes: ['/images/dinuka/w1.png', '/images/dinuka/w2.png', '/images/dinuka/w3.png','/images/dinuka/w4.png'],
@@ -346,7 +346,7 @@ const projectDetails = [
   },
   
 
-  {
+  {// eslint-disable-next-line react/no-unescaped-entities
     id: 'eco-shopper',
     title: 'Eco Shopper',
     subtitle: 'Sustainable Shopping Made Simple',
@@ -390,7 +390,7 @@ const projectDetails = [
   },
   
 
-  {
+  {// eslint-disable-next-line react/no-unescaped-entities
     id: 'waste-wizard',
     title: 'Waste Wizard',
     subtitle: 'Boosting Recycling in Colombo',
@@ -450,7 +450,7 @@ const projectDetails = [
   },
   
 
-  {
+  {// eslint-disable-next-line react/no-unescaped-entities
     id: 'utili-track',
     title: 'Utili Track',
     subtitle: 'One app to manage all your utility payments — fast, simple, and stress-free.',
@@ -497,12 +497,12 @@ const projectDetails = [
     //previewType: 'mobile',
   },
 
-  {
+  {// eslint-disable-next-line react/no-unescaped-entities
     id: 'kokos',
     title: 'KOKOS',
     subtitle: 'Cosmetic products made from coconuts',
     description: {
-      overview: 'KoKoS is a holistic brand built around the natural goodness of the coconut tree, introducing a premium line of coconut-based products designed for today&apos;s fast-paced, health-conscious lifestyle. The product line includes desiccated coconut that is carefully grated, naturally sweet, and aromatic, perfect for desserts, smoothies, or cooking. It also offers coconut milk that is creamy, dairy-free, and made from freshly pressed coconuts to enrich curries, soups, and sauces. Coconut oil is cold-pressed, pure, and unrefined, ideal for cooking, baking, and personal care. Additionally, coconut water is refreshing and electrolyte-rich, straight from young green coconuts to energize the body. KoKoS is committed to delivering nature\&apos;s bounty while minimizing environmental impact, reducing production costs, and offering affordable, high-quality products that promote a healthier lifestyle. The brand&apos;s broader vision is to utilize the entire coconut tree, reduce waste, and support sustainable, guilt-free living.',
+      overview: 'KoKoS is a holistic brand built around the natural goodness of the coconut tree, introducing a premium line of coconut-based products designed for today&apos;s fast-paced, health-conscious lifestyle. The product line includes desiccated coconut that is carefully grated, naturally sweet, and aromatic, perfect for desserts, smoothies, or cooking. It also offers coconut milk that is creamy, dairy-free, and made from freshly pressed coconuts to enrich curries, soups, and sauces. Coconut oil is cold-pressed, pure, and unrefined, ideal for cooking, baking, and personal care. Additionally, coconut water is refreshing and electrolyte-rich, straight from young green coconuts to energize the body. KoKoS is committed to delivering natures bounty while minimizing environmental impact, reducing production costs, and offering affordable, high-quality products that promote a healthier lifestyle. The brand&apos;s broader vision is to utilize the entire coconut tree, reduce waste, and support sustainable, guilt-free living.',
 
       problem:'As lifestyles grow more stressful and fast-paced, people increasingly seek healthy, natural, and convenient food alternatives. Despite a high demand for coconut-based products, consumers often face key issues such as inconsistent product quality and unreliable sourcing, limited transparency in production processes and safety standards, higher price points for healthy, eco-friendly alternatives, fragmented product offerings with no single brand offering a complete coconut-based lifestyle solution, and wastage of by-products in traditional coconut processing. Many local and global coconut product manufacturers focus on individual product segments, failing to capitalize on the coconut tree&apos;s full potential.',
 
@@ -583,7 +583,8 @@ useEffect(() => {
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center p-10">
           <h1 className="text-4xl font-bold text-red-500 mb-4">Project Not Found</h1>
-          <p className="text-xl mb-6">The project {projectId} doesn&apos;t exist in our portfolio.</p>
+          // eslint-disable-next-line react/no-unescaped-entities
+          <p className="text-xl mb-6">The project {projectId} doesn't exist in our portfolio.</p>
           <button 
             onClick={() => router.push('/portfolio')}
             className="bg-[#2C6E49] text-white px-6 py-2 rounded-md hover:bg-[#245239] transition-colors"
