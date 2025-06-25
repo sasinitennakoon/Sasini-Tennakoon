@@ -583,7 +583,7 @@ useEffect(() => {
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center p-10">
           <h1 className="text-4xl font-bold text-red-500 mb-4">Project Not Found</h1>
-          <p className="text-xl mb-6">The project {projectId} doesn't exist in our portfolio.</p>
+          <p className="text-xl mb-6">The project {projectId} doesn&apos;t exist in our portfolio.</p>
           <button 
             onClick={() => router.push('/portfolio')}
             className="bg-[#2C6E49] text-white px-6 py-2 rounded-md hover:bg-[#245239] transition-colors"
