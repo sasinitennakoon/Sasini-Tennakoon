@@ -247,9 +247,9 @@ const projectDetails = [
     title: 'BookNest',
     subtitle: 'A social app for book lovers',
     description: {
-      overview: 'BookNest is a mobile app built for book lovers to explore, review, and share books. It offers a personalized reading experience and a social space for readers to connect.',
-      problem: 'Readers lacked a centralized platform for managing reading lists and sharing their literary interests with a like-minded community.',
-      research: 'Interviews with readers revealed needs for personalization and community. The app was designed with features like reading logs, book clubs, reviews, and social sharing tools.'
+      overview: "BookNest is a mobile application designed for book lovers to connect, share, and discover new reads in a vibrant, social environment. Inspired by the idea of bringing together a community of readers, BookNest blends social networking features with personalized book management tools. Users can build virtual bookshelves, track their reading progress, post reviews, and interact with fellow readers through groups and chats. The app is crafted with a clean and cozy UI, ensuring a seamless experience for users across all ages. Whether you&apos;re a casual reader or a passionate bibliophile, BookNest offers a dedicated space to celebrate your love for books and connect with like-minded individuals.",
+      problem: "In today&apos;s digital world, while there are plenty of platforms for general social interaction, there&apos;s a lack of dedicated, engaging spaces for book lovers to connect and share their reading experiences. Existing apps either focus solely on cataloging books or provide overly complex features that can overwhelm users. Additionally, bookworms often face difficulties tracking and organizing their reading habits across different platforms. They experience limited interaction with like-minded readers, especially around specific genres or interests. There is also a lack of personalized discovery features for new books based on community recommendations and a disconnected experience between managing personal book collections and participating in reading communities. BookNest was designed to address these pain points by combining simplicity, community, and personalization in one cohesive platform.",
+      research: "To better understand the needs of book readers and identify opportunities for improvement, I explored several popular book-related apps. The goal was to analyze their strengths, weaknesses, and the overall user experience they offered. I observed that many apps had overly complex or cluttered interfaces, making it hard for casual users to engage regularly. Many lacked a strong community or interactive features, so users couldn&apos;t easily connect, comment, or chat with others about books. Personalized recommendations were often limited or not visually engaging, and while tracking reading progress was available, it often lacked motivational features or a friendly UI. Offline features and smooth mobile-first experiences were also underdeveloped. These insights revealed a clear gap for a user-friendly, community-centered app that makes reading more social, visually inviting, and organized. These observations formed the foundation for BookNest—an app focused not just on books, but on the people who read them."
     },
     coverImage: '/images/Cover/B.png',
     wireframes: ['/images/Book1.png', '/images/Book2.png', '/images/Book3.png','/images/Book4.png'],
@@ -285,8 +285,8 @@ const projectDetails = [
       colors: [
         { color: '#0073E6', name: 'Bright Azure', text: 'text-white' },
         { color: '#002040', name: 'Oxford Blue', text: 'text-white' },
-        { color: '#004080', name: 'Dark Cerulean', text: 'text-black', border: 'border border-gray-200' },
-        { color: '#0060BF', name: 'Medium Persian Blue', text: 'text-black' },
+        { color: '#004080', name: 'Dark Cerulean', text: 'text-white', border: 'border border-gray-200' },
+        { color: '#0060BF', name: 'Medium Persian Blue', text: 'text-white' },
         { color: '#0080FF', name: 'Azure', text: 'text-white' }
       ],
       primaryColor: '#000000'
@@ -299,9 +299,9 @@ const projectDetails = [
     title: 'Dinuka\'s Portfolio',
     subtitle: 'A clean and modern  personal portfolio, created in Figma.',
     description: {
-      overview: 'This portfolio website was designed for Dinuka, a creative professional looking to showcase their work with a clean and elegant online presence.',
-      problem: 'Dinuka lacked a polished digital portfolio, which limited their ability to present projects professionally and attract new clients.',
-      research: 'Competitor analysis and user persona development guided the layout and tone. Emphasis was placed on visual clarity, simplicity, and showcasing content effectively.'
+      overview: "Dinuka&apos;s Portfolio is a clean, modern, and responsive web-based portfolio designed for Dinuka Gunawardane, a creative professional specializing in photography, videography, and graphic design. The goal was to create a platform that reflects Dinuka&apos;s unique style and showcases his best work to potential clients and collaborators. The website features categorized galleries, a blog section for updates, and a contact form to streamline inquiries. Built with Next.js and Tailwind CSS, the portfolio ensures fast loading, mobile responsiveness, and a user-friendly experience.",
+      problem: "Freelancers and creative professionals like Dinuka often rely on social media or outdated portfolio websites, which lack structure, personalization, or professionalism. Common issues include an inconsistent or unprofessional online presence, difficult navigation, and poor mobile compatibility. Additionally, such sites often fail to effectively showcase work across different creative domains or provide integrated client communication and inquiry features. Dinuka needed a centralized digital space that would not only represent his creative identity but also provide a smooth and engaging experience for visitors.",
+      research: "To craft an effective solution, I analyzed various creative portfolio websites and identified design patterns, content organization, and usability challenges. Input gathered directly from Dinuka helped to understand his needs and preferences. I found that most portfolios favored either minimalism or over-design, so a balance between clean design and creativity was essential. Many portfolios lacked mobile responsiveness, making them hard to view on phones or tablets. Users expected clearly separated sections for each creative service, such as photography and videography. A smooth project showcase with thumbnails, preview images, and short descriptions was a highly effective way to engage visitors. Including a client testimonial or blog section builds trust and establishes credibility. These insights guided the design and structure of Dinuka&apos;s new portfolio, ensuring it meets both functional needs and visual appeal."
     },
     coverImage: '/images/Cover/D.png',
     wireframes: ['/images/dinuka/w1.png', '/images/dinuka/w2.png', '/images/dinuka/w3.png','/images/dinuka/w4.png'],
@@ -337,9 +337,9 @@ const projectDetails = [
       colors: [
         { color: '#0D1321', name: 'Rich Charcoal Blue', text: 'text-white' },
         { color: '#1D2D44', name: 'Dark Midnight Blue', text: 'text-white' },
-        { color: '#3E5C76', name: 'Slate Blue', text: 'text-black', border: 'border border-gray-200' },
-        { color: '#748CAB', name: 'Dusty Periwinkle', text: 'text-black' },
-        { color: '#FFFBEE', name: 'Ivory Cream', text: 'text-white' }
+        { color: '#3E5C76', name: 'Slate Blue', text: 'text-white', border: ' border-gray-200' },
+        { color: '#748CAB', name: 'Dusty Periwinkle', text: 'text-white' },
+        { color: '#FFFBEE', name: 'Ivory Cream', text: 'text-black', }
       ],
       primaryColor: '#000000'
     }
@@ -351,9 +351,9 @@ const projectDetails = [
     title: 'Eco Shopper',
     subtitle: 'Sustainable Shopping Made Simple',
     description: {
-      overview: 'Eco Shopper is a mobile app designed to encourage sustainable shopping. It helps users find eco-friendly products, track their carbon footprint, and monitor their green shopping habits.',
-      problem: 'Consumers often struggle to identify genuinely eco-friendly products and lack tools to track the environmental impact of their purchases.',
-      research: "User interviews and surveys revealed that transparency and habit-tracking were essential. The app was designed with product sustainability ratings, carbon footprint calculators, and rewards to incentivize eco-conscious behavior."
+      overview: "Eco Shopper is a mobile app created to make sustainable shopping easy, engaging, and rewarding. It connects eco-conscious consumers with environmentally friendly products across various categories including clothing, electronics, groceries, and household items. The app equips users with tools to discover and filter eco-certified products, track their environmental impact, earn rewards through a loyalty program, and receive personalized recommendations. By combining sustainability insights with a smooth user experience, Eco Shopper empowers users to make informed and responsible shopping decisions that benefit both them and the planet.",
+      problem: "In today&apos;s consumer-driven world, finding genuinely sustainable products is often difficult, time-consuming, and confusing. Shoppers who want to make eco-conscious decisions face several challenges such as a lack of transparent product information regarding environmental impact, limited access to verified eco-friendly options in one platform, difficulty tracking the impact of their purchases, and no engaging system to encourage or reward sustainable shopping behavior. There was a clear need for a solution that makes sustainable choices easier, more visible, and more rewarding without overwhelming the user.",
+      research: "To design Eco Shopper effectively, I conducted competitive analysis of existing eco-shopping platforms and sustainability-focused e-commerce apps. This included a review of their features, design flows, and user feedback. Many apps lacked detailed product sustainability data, leaving users uncertain about how “green” their purchases really were. Very few platforms provided a way to track environmental contributions such as CO2 savings. Reward systems were either non-existent or not tied to sustainability actions. Users desired mobile-friendly, visually clean interfaces that made browsing eco-friendly items enjoyable and simple. Filters and customization were either too broad or missing, and users wanted tailored search options based on personal values such as vegan, plastic-free, or fair trade. These insights helped shape Eco Shopper&apos;s core features and guided design decisions to ensure the app is user-focused, informative, and impactful."
     },
     coverImage: '/images/Cover/E.png',
     wireframes: ['/images/eco/1.png', '/images/eco/2 (2).png', '/images/eco/3.png','/images/eco/4 (2).png','/images/eco/5.png','/images/eco/6.png','/images/eco/7.png','/images/eco/8.png'],
@@ -379,7 +379,7 @@ const projectDetails = [
         }
       ],
       colors: [
-        { color: '#1FD655', name: 'Bright Spring Green', text: 'text-white' },
+        { color: '#1FD655', name: 'Bright Spring Green', text: 'text-black' },
         { color: '#000000', name: 'Black', text: 'text-white' },
         { color: '#B2FFAF', name: 'Pale Mint', text: 'text-black', border: 'border border-gray-200' },
         { color: '#28D20D', name: 'Vibrant Leaf Green', text: 'text-black' },
@@ -395,9 +395,10 @@ const projectDetails = [
     title: 'Waste Wizard',
     subtitle: 'Boosting Recycling in Colombo',
     description: {
-      overview: 'Waste Wizard is a recycling-focused mobile app for Colombo residents. It connects users with the Municipal Council and rewards recycling behavior through a point-based system.',
-      problem: 'The local recycling process was inefficient, and citizens lacked motivation to participate actively in sustainability programs.',
-      research: "Interviews and field studies highlighted the need for engagement tools. Personas and competitor research led to features like recycling schedules, reward points, and council interaction."
+     overview: `WasteWizard is an innovative centralized waste management platform designed to address the growing challenges of urban waste collection, segregation, and public awareness. Accessible via both mobile application and website, WasteWizard integrates GPS-enabled garbage truck tracking, real-time collection schedules, drop-off location maps, and an EcoPoints reward system to promote active citizen participation in proper waste disposal practices. The platform is designed for three key user groups: residents who want to stay informed and engaged with waste collection schedules and segregation practices; municipal council employees who require efficient tracking, route planning, and reporting; and area managers responsible for oversight, analytics, and service optimization. By combining IoT, GPS tracking, and smart notifications, WasteWizard enables cities to implement sustainable waste management practices, improve public hygiene, and promote environmental responsibility.`,
+      problem: `In modern cities, waste management has become a critical societal and environmental challenge due to increased population density, urbanization, and lack of smart infrastructure. Current systems suffer from uncontrolled and inefficient waste disposal, leading to environmental and health hazards. There is a lack of transparency in garbage collection schedules, causing frustration and missed pickups, and an absence of real-time communication between citizens and municipal services. Additionally, there is insufficient public awareness of proper waste segregation and recycling practices and high operational costs due to fuel inefficiencies, outdated tracking, and manual oversight. These issues contribute to pollution, poor aesthetics, public health risks, and low accountability in urban areas.`,
+
+      research: `To design an effective solution, the WasteWizard team conducted in-depth research on current municipal waste practices, user needs, environmental impact reports, and successful smart city implementations. They found citizen frustration with inconsistent collection times and lack of digital communication between municipal services and citizens. Environmental and health hazards stem from inefficient routes causing increased emissions and skipped collections that contribute to odors and disease. Lack of real-time data limits municipal councils to reactive operations rather than proactive ones. Public interest in eco-friendly practices is growing, with residents open to reward-based systems encouraging recycling and proper waste disposal. Global cities are adopting smart waste solutions including sensor-enabled bins, GPS tracking, dynamic routing, and community engagement programs. WasteWizard was built as a tech-driven platform offering real-time garbage truck tracking and optimized route planning, dynamic collection schedules visible to the public, EcoPoints rewards to promote positive waste behavior, interactive drop-off point maps for recyclables, educational content on segregation and sustainable practices, and data analytics tools for municipalities to optimize operations and reduce costs.`
     },
     coverImage: '/images/Cover/W.png',
     wireframes: ['/images/waste/1.png', '/images/waste/2 (2).png', '/images/waste/3.png','/images/waste/4 (2).png','/images/waste/5.png','/images/waste/6.png'],
@@ -439,9 +440,9 @@ const projectDetails = [
         }
       ],
       colors: [
-        { color: '#1FD655', name: 'Malachite', text: 'text-white' },
+        { color: '#1FD655', name: 'Malachite', text: 'text-black' },
         { color: '#FFFFFF', name: 'White', text: 'text-black' , border: 'border border-gray-200' },
-        { color: '#00661E', name: 'Forest Green', text: 'text-white' },
+        { color: '#00661E', name: 'Forest Green', text: 'text-black' },
         
       ],
       primaryColor: '#000000'
@@ -454,9 +455,10 @@ const projectDetails = [
     title: 'Utili Track',
     subtitle: 'One app to manage all your utility payments — fast, simple, and stress-free.',
     description: {
-      overview: 'UtiliTrack is a utility management mobile app that lets users pay electricity and water bills in one unified platform, eliminating the need for multiple apps..',
-      problem: 'Users had to rely on different apps for each utility service, creating frustration and time loss.',
-      research: "Surveys identified a strong desire for a single, integrated solution. Personas informed a simplified, intuitive design to help users manage payments more efficiently"
+      overview: 'UtiliTrack is a smart utility management system designed to modernize how households and businesses monitor, manage, and pay for electricity and water usage. Combining the power of ICT and IoT technologies, UtiliTrack integrates smart meters with a user-friendly mobile application to deliver a seamless and intelligent utility experience. With features like real-time consumption tracking, online bill payments, outage notifications, and detailed usage history, UtiliTrack empowers users to take control of their utility consumption while promoting sustainability and operational efficiency.',
+      problem:'Traditional utility systems often suffer from inefficiencies and user frustrations. Key pain points include uncontrolled usage of electricity and water due to a lack of real-time monitoring, inconvenient and outdated bill payment methods requiring physical presence or manual processes, inaccurate billing resulting from manual meter readings and delayed data entry, and lack of timely notifications about service outages causing confusion and inconvenience. These issues lead to wasted resources, increased costs, and poor user satisfaction.',
+
+      research: 'To design a solution tailored to user needs, market research, stakeholder interviews, and reviews of current smart utility systems locally and internationally were conducted. It was found that users desire real-time visibility into their electricity and water consumption to adjust usage proactively. There is a growing demand for convenient online payment options to save time and eliminate queues. Smart meters are being adopted globally to improve billing accuracy and reduce human error. Mobile apps are preferred platforms for 24/7 access, offering flexibility regardless of location. Outage notifications are valued features that enhance transparency and user trust in utility providers. UtiliTrack implemented IoT-based smart meters to automate accurate data collection, developed a mobile-first platform for access to bill history, consumption data, and outage alerts, integrated secure online payment gateways to streamline billing and reduce friction, and focused on data-driven awareness to support conservation habits among users.'
     },
     coverImage: '/images/Cover/U.png',
     wireframes: ['/images/utili/w1.png', '/images/utili/w2.png', '/images/utili/w3.png','/images/utili/w4.png','/images/utili/w5.png','/images/utili/w6.png','/images/utili/FigJam basics.png'],
@@ -500,9 +502,11 @@ const projectDetails = [
     title: 'KOKOS',
     subtitle: 'Cosmetic products made from coconuts',
     description: {
-      overview: 'KOKOS is a website designed to showcase cosmetic products made from coconuts. The goal was to create a modern and intuitive website that would appeal to the target audience while emphasizing the unique value of the products.',
-      problem: 'The challenge was to design a visually engaging website that highlights the natural benefits of coconut-based cosmetics while making it easy for customers to browse and purchase products.',
-      research: "We conducted user research to understand potential buyers' interests and behavior. This included developing personas based on demographic research and conducting a competitive analysis of similar products in the market."
+      overview: 'KoKoS is a holistic brand built around the natural goodness of the coconut tree, introducing a premium line of coconut-based products designed for today&apos;s fast-paced, health-conscious lifestyle. The product line includes desiccated coconut that is carefully grated, naturally sweet, and aromatic, perfect for desserts, smoothies, or cooking. It also offers coconut milk that is creamy, dairy-free, and made from freshly pressed coconuts to enrich curries, soups, and sauces. Coconut oil is cold-pressed, pure, and unrefined, ideal for cooking, baking, and personal care. Additionally, coconut water is refreshing and electrolyte-rich, straight from young green coconuts to energize the body. KoKoS is committed to delivering nature&apos;s bounty while minimizing environmental impact, reducing production costs, and offering affordable, high-quality products that promote a healthier lifestyle. The brand&apos;s broader vision is to utilize the entire coconut tree, reduce waste, and support sustainable, guilt-free living.',
+
+      problem:'As lifestyles grow more stressful and fast-paced, people increasingly seek healthy, natural, and convenient food alternatives. Despite a high demand for coconut-based products, consumers often face key issues such as inconsistent product quality and unreliable sourcing, limited transparency in production processes and safety standards, higher price points for healthy, eco-friendly alternatives, fragmented product offerings with no single brand offering a complete coconut-based lifestyle solution, and wastage of by-products in traditional coconut processing. Many local and global coconut product manufacturers focus on individual product segments, failing to capitalize on the coconut tree&apos;s full potential.',
+
+      research: 'To validate the concept and market potential, KoKoS conducted a comprehensive analysis of consumer behavior, industry trends, and competitor offerings across the coconut-based product landscape in Sri Lanka and beyond. There is a growing consumer demand for natural, healthy, and eco-conscious products. Coconut-based products are widely accepted as nutritious, versatile, and sustainable. The global popularity of coconut oil, water, and milk continues to rise due to wellness trends. Consumers are increasingly aware of the environmental impact of their purchasing choices. Competitors in coconut oil include Ceylon Coconut Company, Fresco, and Quentara. Major players for coconut milk are Renuka, Sera, and Nestlé&apos;s Maggie. Coconut water brands like Wichy, Coco House, and Ceylon Naturals dominate the market. Desiccated coconut is produced by Renuka, Maggie, and similar companies. Tropicoir Lanka leads with coir fiber, pots, and textiles in coir and fiber products. Most competitors focus on individual product categories, but there is room for a brand offering multiple edible and non-edible coconut products under one roof. Consumers seek affordable and reliable alternatives with a commitment to sustainability and health.'
     },
     coverImage: '/images/Cover/K.png',
     wireframes: ['/images/koko/w1.png', '/images/koko/w2.png'],
@@ -539,9 +543,9 @@ const projectDetails = [
       ],
       colors: [
         { color: '#283F6C', name: 'Indigo Dye', text: 'text-white' },
-        { color: '#FFFFFF', name: 'White', text: 'text-white' },
-        { color: '#146F75', name: 'Deep Teal', text: 'text-black', border: 'border border-gray-200' },
-        { color: '#C4F2CB', name: 'Tea Green', text: 'text-black' },
+        { color: '#FFFFFF', name: 'White', text: 'text-black' },
+        { color: '#146F75', name: 'Deep Teal', text: 'text-white', border: 'border border-gray-200' },
+        { color: '#C4F2CB', name: 'Tea Green', text: 'text-white' },
         
       ],
       primaryColor: '#000000'
@@ -614,7 +618,7 @@ useEffect(() => {
             <Link href="/portfolio" className="hover:text-white">My Portfolio</Link>
             <Link href="/#skills" className="hover:text-white">Profile & Skills</Link>
             <a
-                href="https://wa.me/94771234567"
+                href="https://wa.me/94776552988"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-white"
@@ -912,15 +916,14 @@ useEffect(() => {
         <h2 className="text-6xl font-semibold mb-12 text-center text-black font-[lato]">UI Walkthrough</h2>
         <StoryCard project={project} />
       </div>
-
-      {/* Footer */}
-      <footer className="bg-[#2C6E49] text-white py-8 mt-20">
-        <div className="text-center">
-          <p className="text-mm">
-            &copy; {new Date().getFullYear()} Sasini Tennakoon. All rights reserved.
-          </p>
-        </div>
-      </footer>
+{/* Footer */}
+<footer className="w-full bg-[#2C6E49] text-white py-8 mt-20">
+  <div className="text-center">
+    <p className="text-mm">
+      &copy; {new Date().getFullYear()} Sasini Tennakoon. All rights reserved.
+    </p>
+  </div>
+</footer>
 
       {showScrollNav && (
   <>

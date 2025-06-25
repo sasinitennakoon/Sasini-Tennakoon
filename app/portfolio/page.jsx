@@ -94,7 +94,7 @@ export default function PortfolioPage() {
           <a href="/portfolio" className="hover:text-white">My Portfolio</a>
           <a href="/#skills" className="hover:text-white">Profile & Skills</a>
           <a
-            href="https://wa.me/94771234567"
+            href="https://wa.me/94776552988"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-white"
