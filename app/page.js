@@ -135,11 +135,11 @@ export default function Home() {
   id="about"  // Add this id for scrolling target
   className="lg:w-1/2 space-y-6 p-8 lg:p-12"
 >
-                <h1 className="text-4xl md:text-5xl font-bold text-gray-800">
+                <h1 className="text-4xl md:text-5xl font-bold text-black">
                   Hi,<br /><br />
                   <span className="text-green-700">I am a UI/UX Designer</span>
                 </h1>
-                <p className="text-lg text-gray-600 leading-relaxed">
+                <p className="text-lg text-black leading-relaxed">
                   Passionate and detail-oriented UI/UX engineer with a focus on
                   designing user-friendly and engaging digital experiences. Currently
                   pursuing a BSc in Information Systems, I am eager to apply my
@@ -155,7 +155,7 @@ export default function Home() {
       {/* Portfolio Section */}
       <section id="portfolio" className="py-20 bg-gray-50 overflow-hidden">
         <div className="container mx-auto px-6">
-          <h1 className="text-3xl md:text-6xl font-bold text-center text-gray-800 mb-16 font-[lato]">
+          <h1 className="text-3xl md:text-6xl font-bold text-center text-black mb-16 font-[lato]">
             MY PORTFOLIO
           </h1>
           <AutoScrollingCards />
@@ -163,7 +163,7 @@ export default function Home() {
       </section>
       <section id="skills" className="py-12 bg-white">
   <div className="max-w-[1200px] mx-auto px-4">
-    <h1 className="text-3xl md:text-6xl font-bold text-center text-gray-800 mb-16 font-[Lato]">
+    <h1 className="text-3xl md:text-6xl font-bold text-center text-black mb-16 font-[Lato]">
       Profile & Skills
     </h1>
 
@@ -171,28 +171,28 @@ export default function Home() {
     <div className="flex flex-col md:flex-row gap-x-16 gap-y-12 mb-16">
       {/* Bio Details */}
       <div className="md:w-1/2">
-        <h3 className="text-4xl font-bold text-gray-800 mb-6 border-b-2 border-green-600 pb-2 font-[Roboto]">
+        <h3 className="text-4xl font-bold text-black mb-6 border-b-2 border-green-600 pb-2 font-[Roboto]">
           Bio Details
         </h3>
         <div className="space-y-4">
           <div className="flex">
-            <span className="w-32 font-medium text-gray-700">Name</span>
+            <span className="w-32 font-medium text-black">Name</span>
             <span className="mx-2">:</span>
             <span>Sasini Tennakoon</span>
           </div>
           <div className="flex">
-            <span className="w-32 font-medium text-gray-700">Address</span>
+            <span className="w-32 font-medium text-black">Address</span>
             <span className="mx-2">:</span>
             <span>Colombo, Sri Lanka</span>
           </div>
           
           <div className="flex">
-            <span className="w-32 font-medium text-gray-700">Phone no</span>
+            <span className="w-32 font-medium text-black">Phone no</span>
             <span className="mx-2">:</span>
             <span>0776552988</span>
           </div>
           <div className="flex">
-            <span className="w-32 font-medium text-gray-700">Email</span>
+            <span className="w-32 font-medium text-black">Email</span>
             <span className="mx-2">:</span>
             <span>tennakoonsasi5@gmail.com</span>
           </div>
@@ -201,7 +201,7 @@ export default function Home() {
 
       {/* Working Experience */}
       <div className="md:w-1/2">
-        <h3 className="text-4xl font-bold text-gray-800 mb-6 border-b-2 border-green-600 pb-2 font-[Roboto]">
+        <h3 className="text-4xl font-bold text-black mb-6 border-b-2 border-green-600 pb-2 font-[Roboto]">
           Working Experiences
         </h3>
         <div className="flex items-start gap-4">
@@ -215,11 +215,11 @@ export default function Home() {
             />
           </div>
           <div>
-            <h4 className="text-xl font-semibold text-gray-800">
+            <h4 className="text-xl font-semibold text-black">
               Business Analyst - Intern
             </h4>
-            <p className="text-gray-600 mb-1">VizuaMatix (Pvt) Ltd</p>
-            <p className="text-gray-500 text-sm">19 December 2024 - Present</p>
+            <p className="text-black mb-1">VizuaMatix (Pvt) Ltd</p>
+            <p className="text-black text-sm">19 December 2024 - Present</p>
           </div>
         </div>
       </div>
@@ -228,7 +228,7 @@ export default function Home() {
 
     {/* Skills */}
 <div>
-  <h3 className="text-4xl font-bold text-gray-800 mb-6 border-b-2 border-green-600 pb-2 font-[Roboto]">
+  <h3 className="text-4xl font-bold text-black mb-6 border-b-2 border-green-600 pb-2 font-[Roboto]">
     My Skills
   </h3>
   <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
@@ -258,7 +258,7 @@ export default function Home() {
             className="object-contain w-full h-full"
           />
         </div>
-        <span className="text-gray-700 text-center">{skill.name}</span>
+        <span className="text-black text-center">{skill.name}</span>
       </div>
     ))}
   </div>

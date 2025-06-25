@@ -231,7 +231,7 @@ const StoryCard = ({ project }) => {
             ))}
           </div>
           
-          <div className="mt-6 text-sm text-gray-500">
+          <div className="mt-6 text-sm text-black">
             {activeIndex + 1} of {images.length} screens
           </div>
         </div>
@@ -642,7 +642,7 @@ useEffect(() => {
       disabled={currentIndex === 0}
       className={`inline-flex items-center gap-2 px-5 py-2 rounded-full text-sm md:text-base font-semibold transition-all duration-300
         ${currentIndex === 0 
-          ? 'text-gray-400 bg-gray-100 cursor-not-allowed' 
+          ? 'text-black bg-gray-100 cursor-not-allowed' 
           : 'bg-gradient-to-r from-green-700 to-green-500 text-white hover:scale-105 hover:shadow-lg'
         }`}
     >
@@ -690,7 +690,7 @@ useEffect(() => {
               Overview
             </div>
           </div>
-          <div className="hidden md:block w-[1px] bg-gray-400 h-24" />
+          <div className="hidden md:block w-[1px] bg-black h-24" />
           <div className="w-full md:w-[80%] text-base md:text-lg text-black text-justify leading-relaxed">
             {project.description.overview}
           </div>
@@ -704,7 +704,7 @@ useEffect(() => {
             </div>
           </div>
           <div className="hidden md:block w-[1px] bg-black h-24" />
-          <div className="w-full md:w-[80%] text-base md:text-lg text-gray-800 text-justify leading-relaxed">
+          <div className="w-full md:w-[80%] text-base md:text-lg text-black text-justify leading-relaxed">
             {project.description.problem}
           </div>
         </div>
@@ -717,7 +717,7 @@ useEffect(() => {
             </div>
           </div>
           <div className="hidden md:block w-[1px] bg-black h-24" />
-          <div className="w-full md:w-[80%] text-base md:text-lg text-gray-800 text-justify leading-relaxed">
+          <div className="w-full md:w-[80%] text-base md:text-lg text-black text-justify leading-relaxed">
             {project.description.research}
           </div>
         </div>
@@ -765,9 +765,9 @@ useEffect(() => {
                 >
                   <p className="text-6xl mb-2" style={{ color: primaryColor }}>{font.sample}</p>
                   <h3 className="text-lg font-semibold mb-2">{font.name}</h3>
-                  <p className="text-sm text-gray-500 mb-1">{font.usage}</p>
-                  <p className="text-sm text-gray-700 whitespace-pre-line leading-snug">{font.paragraph}</p>
-                  <p className="text-sm text-gray-700 mt-2">{font.numbers}</p>
+                  <p className="text-sm text-black mb-1">{font.usage}</p>
+                  <p className="text-sm text-black whitespace-pre-line leading-snug">{font.paragraph}</p>
+                  <p className="text-sm text-black mt-2">{font.numbers}</p>
                 </div>
               ))}
             </div>
