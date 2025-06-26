@@ -871,13 +871,12 @@ useEffect(() => {
         )}
       </div>
 
+{/* UI Images Section - Responsive */}
 {(project.uiMobileImages?.length > 0 || project.uiDesktopImages?.length > 0) && (
-  <div className="max-w-6xl mx-auto mt-16 mb-20 px-4 sm:px-6">
-    <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold mb-12 text-center text-black font-[lato]">
-      UI Design
-    </h2>
+  <div className="max-w-6xl mx-auto mt-16 mb-20 px-4">
+    <h2 className="text-6xl font-semibold mb-6 text-center text-black font-[lato]">UI Design</h2>
 
-    {/* ✅ Mobile View (<640px) */}
+    {/* ✅ Mobile View: Scrollable Carousels */}
     {windowWidth < 640 ? (
       <>
         {/* Mobile UI Carousel */}
@@ -903,21 +902,21 @@ useEffect(() => {
           </>
         )}
 
-        {/* Desktop UI Grid */}
+        {/* Desktop UI Carousel */}
         {project.uiDesktopImages?.length > 0 && (
           <>
             <h3 className="text-xl font-semibold text-center text-green-700 mt-8 mb-4">Desktop UI</h3>
-            <div className="grid grid-cols-1 gap-4">
+            <div className="flex overflow-x-auto gap-4 snap-x snap-mandatory pb-4 -mx-4 px-4">
               {project.uiDesktopImages.map((src, i) => (
                 <div
                   key={i}
-                  className="border-2 border-green-600 rounded-xl overflow-hidden shadow-md"
+                  className="flex-shrink-0 snap-center w-[320px] border-2 border-green-600 rounded-xl overflow-hidden shadow-md"
                 >
                   <Image
                     src={src}
                     alt={`${project.title} desktop UI screen ${i + 1}`}
-                    width={600}
-                    height={300}
+                    width={320}
+                    height={240}
                     className="object-contain w-full h-auto"
                   />
                 </div>
@@ -928,11 +927,11 @@ useEffect(() => {
       </>
     ) : (
       <>
-        {/* ✅ Desktop View (original stacked layout) */}
+        {/* ✅ Desktop View: Original Organized Layout */}
 
-        {/* Mobile UI Stacked */}
+        {/* Mobile UI Layout (Stacked & Layered) */}
         {project.uiMobileImages?.length > 0 && (
-          <div className="relative h-[500px] md:h-[600px] w-full flex justify-center items-end overflow-visible px-4">
+          <div className="relative h-[380px] sm:h-[500px] md:h-[600px] w-full flex justify-center items-end overflow-visible px-4">
             <div className="relative w-full h-full flex justify-center">
               {project.uiMobileImages.map((src, i) => {
                 const totalImages = project.uiMobileImages.length;
@@ -970,9 +969,9 @@ useEffect(() => {
           </div>
         )}
 
-        {/* Desktop UI Stacked */}
+        {/* Desktop UI Layout (Stacked & Layered) */}
         {project.uiDesktopImages?.length > 0 && (
-          <div className="relative min-h-[350px] w-full flex justify-center items-end overflow-visible px-4">
+          <div className="relative min-h-[280px] sm:min-h-[350px] w-full flex justify-center items-end overflow-visible px-4">
             <div className="relative w-full h-full flex justify-center">
               {project.uiDesktopImages.map((src, i) => {
                 const totalImages = project.uiDesktopImages.length;
