@@ -18,14 +18,30 @@ export default function Home() {
     }, 100);
   };
 
+  // Handle scroll to show home section on any scroll (mobile + desktop)
   useEffect(() => {
-    const handleScroll = (e) => {
+    const handleScroll = () => {
+      if (!showHome && window.scrollY > 10) {
+        scrollToHome();
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [showHome]);
+
+  // Optional: you can keep or remove this wheel listener
+  useEffect(() => {
+    const handleWheel = (e) => {
       if (e.deltaY > 0 && !showHome) {
         scrollToHome();
       }
     };
-    window.addEventListener('wheel', handleScroll);
-    return () => window.removeEventListener('wheel', handleScroll);
+    window.addEventListener('wheel', handleWheel);
+    return () => window.removeEventListener('wheel', handleWheel);
   }, [showHome]);
 
   useEffect(() => {
@@ -63,7 +79,7 @@ export default function Home() {
         </div>
       </main>
 
-      <nav className={`fixed top-0 left-0 w-full z-50 bg-[#2C6E49] shadow-md px-6 py-4 transition-opacity duration-500 ${showNavbar ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>        
+      <nav className={`fixed top-0 left-0 w-full z-50 bg-[#2C6E49] shadow-md px-6 py-4 transition-opacity duration-500 ${showNavbar ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
         <div className="flex justify-between items-center">
           <div className="text-2xl sm:text-4xl font-bold text-white">SASINI TENNAKOON</div>
           <div className="md:hidden">
@@ -97,10 +113,20 @@ export default function Home() {
           <div className="container mx-auto px-4">
             <div className="flex flex-col lg:flex-row items-center gap-8">
               <div className="lg:w-1/2 w-full">
-                <Image src="/profile2.jpeg" alt="Sasini Tennakoon" width={600} height={100} className="rounded-lg object-cover w-full h-auto" style={{ objectPosition: 'left center' }} />
+                <Image
+                  src="/profile2.jpeg"
+                  alt="Sasini Tennakoon"
+                  width={600}
+                  height={100}
+                  className="rounded-lg object-cover w-full h-auto"
+                  style={{ objectPosition: 'left center' }}
+                />
               </div>
               <div id="about" className="lg:w-1/2 w-full space-y-6 p-6">
-                <h1 className="text-3xl md:text-5xl font-bold text-black">Hi,<br /><span className="text-green-700">I am a UI/UX Designer</span></h1>
+                <h1 className="text-3xl md:text-5xl font-bold text-black">
+                  Hi,<br />
+                  <span className="text-green-700">I am a UI/UX Designer</span>
+                </h1>
                 <p className="text-lg text-gray-900 leading-relaxed">
                   Passionate and detail-oriented UI/UX engineer with a focus on designing user-friendly and engaging digital experiences. Currently pursuing a BSc in Information Systems, I am eager to apply my creativity and problem-solving skills to enhance user interaction and satisfaction through thoughtful design solutions.
                 </p>
@@ -164,7 +190,6 @@ export default function Home() {
       <footer className="bg-[#2C6E49] text-white py-8 w-full">
         <div className="text-center">
           <p className="text-mm">&copy; {new Date().getFullYear()} Sasini Tennakoon. All rights reserved.</p>
-          
         </div>
       </footer>
     </>
