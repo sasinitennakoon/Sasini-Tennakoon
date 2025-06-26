@@ -64,15 +64,20 @@ export default function PortfolioPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    let lastScrollY = window.scrollY;
-    const handleScroll = () => {
-      setShowNavbar(window.scrollY < lastScrollY || window.scrollY < 50);
-      lastScrollY = window.scrollY;
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
+  let lastScrollY = window.scrollY;
+  const handleScroll = () => {
+    if (window.scrollY < lastScrollY || window.scrollY < 50) {
+      setShowScrollNav(true);
+      setShowNavbar(true);
+    } else {
+      setShowScrollNav(false);
+      setShowNavbar(false);
+    }
+    lastScrollY = window.scrollY;
+  };
+  window.addEventListener('scroll', handleScroll);
+  return () => window.removeEventListener('scroll', handleScroll);
+}, []);
   return (
     <div className="flex flex-col min-h-screen">
       {/* 🔻 Navbar */}

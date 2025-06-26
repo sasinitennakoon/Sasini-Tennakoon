@@ -561,18 +561,22 @@ research: "To validate the concept and market potential, KoKoS conducted a compr
 export default function ProjectDetailPage() {
   const params = useParams();
   const router = useRouter();
-  
+
+  // ✅ Add this line
   const [showScrollNav, setShowScrollNav] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-useEffect(() => {
-  const handleScroll = () => {
-    const scrolledDown = window.scrollY > 300;
-    setShowScrollNav(scrolledDown);
-  };
 
-  window.addEventListener('scroll', handleScroll);
-  return () => window.removeEventListener('scroll', handleScroll);
-}, []);
+  // ✅ Add this useEffect
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrolledDown = window.scrollY > 300;
+      setShowScrollNav(scrolledDown);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
 
   // Safely get project ID from params
@@ -611,23 +615,34 @@ useEffect(() => {
     <main className="bg-white min-h-screen pt-28 px-4 md:px-6">
       {/* Navbar */}
       <nav className="fixed top-0 left-0 w-full z-50 bg-[#2C6E49] h-20 shadow-md px-6 py-4 flex justify-between items-center">
-          <div className="text-4xl font-bold text-white ">SASINI TENNAKOON</div>
-          <div className="space-x-8 text-lg font-medium text-white font-[Lato]">
-            {/* Link to sections on landing page */}
-            <Link href="/#home" className="hover:text-white">Home</Link>
-            <Link href="/#about" className="hover:text-white">About</Link>
-            <Link href="/portfolio" className="hover:text-white">My Portfolio</Link>
-            <Link href="/#skills" className="hover:text-white">Profile & Skills</Link>
-            <a
-                href="https://wa.me/94776552988"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-white"
-                >
-                Contact
-             </a>
-          </div>
-      </nav>
+  <div className="text-2xl sm:text-4xl font-bold text-white">SASINI TENNAKOON</div>
+
+  {/* Desktop Menu */}
+  <div className="hidden md:flex space-x-8 text-lg font-medium text-white font-[Lato]">
+    <Link href="/#home" className="hover:text-white">Home</Link>
+    <Link href="/#about" className="hover:text-white">About</Link>
+    <Link href="/portfolio" className="hover:text-white">My Portfolio</Link>
+    <Link href="/#skills" className="hover:text-white">Profile & Skills</Link>
+    <a href="https://wa.me/94776552988" target="_blank" rel="noopener noreferrer" className="hover:text-white">Contact</a>
+  </div>
+
+  {/* Mobile Menu Button */}
+  <div className="md:hidden">
+    <button onClick={() => setMobileMenuOpen(prev => !prev)} className="text-white text-2xl">☰</button>
+  </div>
+
+  {/* Mobile Dropdown */}
+  {mobileMenuOpen && (
+    <div className="absolute top-20 left-0 w-full bg-[#2C6E49] text-white flex flex-col space-y-4 py-4 px-6 md:hidden z-50">
+      <Link href="/#home" className="hover:text-white">Home</Link>
+      <Link href="/#about" className="hover:text-white">About</Link>
+      <Link href="/portfolio" className="hover:text-white">My Portfolio</Link>
+      <Link href="/#skills" className="hover:text-white">Profile & Skills</Link>
+      <a href="https://wa.me/94776552988" target="_blank" rel="noopener noreferrer" className="hover:text-white">Contact</a>
+    </div>
+  )}
+</nav>
+
 
       {/* Project Header */}
       <div className="text-center mb-12">
