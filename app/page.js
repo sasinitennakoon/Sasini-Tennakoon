@@ -40,7 +40,6 @@ export default function Home() {
 
   return (
     <>
-      {/* 🔹 Landing Page */}
       <main id="home" className="relative min-h-screen w-full">
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/landing bg.jpg')" }}></div>
         <div className="relative z-10 flex items-center justify-center min-h-screen px-4 text-center">
@@ -64,7 +63,6 @@ export default function Home() {
         </div>
       </main>
 
-      {/* 🔻 Navbar */}
       <nav className={`fixed top-0 left-0 w-full z-50 bg-[#2C6E49] shadow-md px-6 py-4 transition-opacity duration-500 ${showNavbar ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>        
         <div className="flex justify-between items-center">
           <div className="text-2xl sm:text-4xl font-bold text-white">SASINI TENNAKOON</div>
@@ -90,7 +88,6 @@ export default function Home() {
         )}
       </nav>
 
-      {/* 🔻 Home Section */}
       {showHome && (
         <section ref={homeRef} id="intro" className="bg-white min-h-screen pt-20 transition-opacity duration-1000 ease-in-out">
           <div className="container mx-auto px-4">
@@ -109,7 +106,6 @@ export default function Home() {
         </section>
       )}
 
-      {/* Portfolio Section */}
       <section id="portfolio" className="py-20 bg-gray-50 overflow-hidden">
         <div className="container mx-auto px-4">
           <h1 className="text-3xl md:text-6xl font-bold text-center text-black mb-16 font-[lato]">MY PORTFOLIO</h1>
@@ -117,18 +113,17 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Skills Section */}
       <section id="skills" className="py-12 bg-white">
         <div className="max-w-[1200px] mx-auto px-4">
           <h1 className="text-3xl md:text-6xl font-bold text-center text-black mb-16 font-[Lato]">Profile & Skills</h1>
           <div className="flex flex-col md:flex-row gap-x-16 gap-y-12 mb-16">
             <div className="md:w-1/2">
               <h3 className="text-4xl font-bold text-black mb-6 border-b-2 border-green-600 pb-2 font-[Roboto]">Bio Details</h3>
-              <div className="space-y-4">
-                <div className="flex"><span className="w-32 font-medium text-black">Name</span><span className="mx-2">:</span><span>Sasini Tennakoon</span></div>
-                <div className="flex"><span className="w-32 font-medium text-black">Address</span><span className="mx-2">:</span><span>Colombo, Sri Lanka</span></div>
-                <div className="flex"><span className="w-32 font-medium text-black">Phone no</span><span className="mx-2">:</span><span>0776552988</span></div>
-                <div className="flex"><span className="w-32 font-medium text-black">Email</span><span className="mx-2">:</span><span>tennakoonsasi5@gmail.com</span></div>
+              <div className="space-y-4 text-black">
+                <div className="flex"><span className="w-32 font-medium">Name</span><span className="mx-2">:</span><span>Sasini Tennakoon</span></div>
+                <div className="flex"><span className="w-32 font-medium">Address</span><span className="mx-2">:</span><span>Colombo, Sri Lanka</span></div>
+                <div className="flex"><span className="w-32 font-medium">Phone no</span><span className="mx-2">:</span><span>0776552988</span></div>
+                <div className="flex"><span className="w-32 font-medium">Email</span><span className="mx-2">:</span><span>tennakoonsasi5@gmail.com</span></div>
               </div>
             </div>
             <div className="md:w-1/2">
@@ -137,10 +132,10 @@ export default function Home() {
                 <div className="w-28">
                   <Image src="/work.png" alt="Working Illustration" width={112} height={112} className="object-contain" />
                 </div>
-                <div>
-                  <h4 className="text-xl font-semibold text-black">Business Analyst - Intern</h4>
-                  <p className="text-black mb-1">VizuaMatix (Pvt) Ltd</p>
-                  <p className="text-black text-sm">19 December 2024 - Present</p>
+                <div className="text-black">
+                  <h4 className="text-xl font-semibold">Business Analyst - Intern</h4>
+                  <p className="mb-1">VizuaMatix (Pvt) Ltd</p>
+                  <p className="text-sm">19 December 2024 - Present</p>
                 </div>
               </div>
             </div>
