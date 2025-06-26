@@ -92,7 +92,8 @@ export default function Home() {
 
       {/* 🔻 Home Section */}
       {showHome && (
-        <section ref={homeRef} id="intro" className="bg-white min-h-screen pt-20 transition-opacity duration-1000 ease-in-out">
+        <section ref={homeRef} id="intro" className="bg-white min-h-screen pt-8 transition-opacity duration-1000 ease-in-out">
+
           <div className="container mx-auto px-4">
             <div className="flex flex-col lg:flex-row items-center gap-8">
               <div className="lg:w-1/2 w-full">
@@ -110,7 +111,8 @@ export default function Home() {
       )}
 
       {/* 🔻 Portfolio Section */}
-      <section id="portfolio" className="py-20 bg-gray-50 overflow-hidden">
+      <section id="portfolio" className="py-12 bg-gray-50 overflow-hidden">
+
         <div className="container mx-auto px-4">
           <h1 className="text-3xl md:text-6xl font-bold text-center text-black mb-16 font-[lato]">MY PORTFOLIO</h1>
           <AutoScrollingCards />
