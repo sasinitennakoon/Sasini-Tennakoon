@@ -678,7 +678,7 @@ useEffect(() => {
 </nav>
       {/* Project Header */}
       <div className="text-center mb-12">
-  <h1 className="text-4xl sm:text-5xl md:text-8xl font-bold text-black font-[Lato] mb-2">
+  <h1 className="text-3xl md:text-8xl font-bold text-black font-[Lato] mb-2">
     {project.title}
   </h1>
   <p className="text-lg md:text-xl text-black">{project.subtitle}</p>
@@ -730,17 +730,17 @@ useEffect(() => {
 
 
 
-     {/* Project Details */}
+      {/* Project Details */}
 <div className="max-w-6xl mx-auto space-y-20 mb-16 px-4 md:px-6">
   {/* Overview */}
   <div className="flex flex-col md:flex-row items-center md:items-start gap-2 md:gap-4">
     <div className="w-full md:w-[20%] flex justify-end">
-      <div className="flex items-center text-base md:text-3xl font-semibold text-right h-24 text-black">
+      <div className="flex items-center text-lg md:text-3xl font-semibold text-right h-24 text-black">
         Overview
       </div>
     </div>
     <div className="hidden md:block w-[1px] bg-black h-24" />
-    <div className="w-full md:w-[80%] text-sm sm:text-base md:text-lg text-black text-justify leading-relaxed">
+    <div className="w-full md:w-[80%] text-base md:text-lg text-black text-justify leading-relaxed">
       {project.description.overview}
     </div>
   </div>
@@ -748,12 +748,12 @@ useEffect(() => {
   {/* Problem */}
   <div className="flex flex-col md:flex-row-reverse items-center md:items-start gap-2 md:gap-4">
     <div className="w-full md:w-[20%] flex justify-start md:justify-start">
-      <div className="flex items-center text-base md:text-4xl font-semibold text-left h-24 text-black">
+      <div className="flex items-center text-lg md:text-4xl font-semibold text-left h-24 text-black">
         Problem
       </div>
     </div>
     <div className="hidden md:block w-[1px] bg-black h-24" />
-    <div className="w-full md:w-[80%] text-sm sm:text-base md:text-lg text-black text-justify leading-relaxed">
+    <div className="w-full md:w-[80%] text-base md:text-lg text-black text-justify leading-relaxed">
       {project.description.problem}
     </div>
   </div>
@@ -761,12 +761,12 @@ useEffect(() => {
   {/* Research */}
   <div className="flex flex-col md:flex-row items-center md:items-start gap-2 md:gap-4">
     <div className="w-full md:w-[20%] flex justify-end">
-      <div className="flex items-center text-base md:text-4xl font-semibold text-right h-24 text-black">
+      <div className="flex items-center text-lg md:text-4xl font-semibold text-right h-24 text-black">
         Research
       </div>
     </div>
     <div className="hidden md:block w-[1px] bg-black h-24" />
-    <div className="w-full md:w-[80%] text-sm sm:text-base md:text-lg text-black text-justify leading-relaxed">
+    <div className="w-full md:w-[80%] text-base md:text-lg text-black text-justify leading-relaxed">
       {project.description.research}
     </div>
   </div>
@@ -774,11 +774,13 @@ useEffect(() => {
 
 
 
-
       {/* Wireframes Section */}
       {project.wireframes?.length > 0 && (
         <div className="max-w-6xl mx-auto mt-16 mb-20">
-          <h2 className="text-6xl font-semibold mb-6 text-center text-black font-[lato]">Wireframes</h2>
+          <h2 className="text-3xl md:text-6xl font-semibold mb-6 text-center text-black font-[lato]">
+  Wireframes
+</h2>
+
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 px-4">
             {project.wireframes.map((src, i) => {
@@ -802,7 +804,10 @@ useEffect(() => {
 
      {/* Components Section */}
       <div className="max-w-6xl mx-auto mt-20 mb-24 px-4 md:px-6">
-        <h2 className="text-6xl font-bold text-center text-black font-[lato] mb-12">Design System</h2>
+       <h2 className="text-3xl md:text-6xl font-bold text-center text-black font-[lato] mb-12">
+  Design System
+</h2>
+
 
         {/* Typography Cards */}
         {project.designSystem?.typography && (
@@ -875,7 +880,10 @@ useEffect(() => {
 {/* UI Images Section - Responsive */}
 {(project.uiMobileImages?.length > 0 || project.uiDesktopImages?.length > 0) && (
   <div className="max-w-6xl mx-auto mt-16 mb-20 px-4">
-    <h2 className="text-6xl font-semibold mb-6 text-center text-black font-[lato]">UI Design</h2>
+   <h2 className="text-3xl md:text-6xl font-semibold mb-6 text-center text-black font-[lato]">
+  UI Design
+</h2>
+
 
     {/* ✅ Mobile View: Scrollable Carousels */}
     {windowWidth < 640 ? (
@@ -1016,7 +1024,10 @@ useEffect(() => {
 
 {/* Updated Preview Section */}
       <div className="max-w-6xl mx-auto mt-16 mb-20 px-4">
-        <h2 className="text-6xl font-semibold mb-12 text-center text-black font-[lato]">UI Walkthrough</h2>
+        <h2 className="text-3xl md:text-6xl font-semibold mb-12 text-center text-black font-[lato]">
+  UI Walkthrough
+</h2>
+
         <StoryCard project={project} />
       </div>
 
