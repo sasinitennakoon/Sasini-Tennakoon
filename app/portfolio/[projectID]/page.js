@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { Bellota_Text, Cormorant_Garamond, DM_Sans, Estonia, Geologica, Inknut_Antiqua, Inter, Inder, Libre_Baskerville, Merriweather, Playfair_Display, Poppins, Roboto } from 'next/font/google';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { useParams, useRouter } from 'next/navigation';
 
 
 const libreBaskerville = Libre_Baskerville({
@@ -564,6 +565,7 @@ export default function ProjectDetailPage() {
 
   // ✅ Add this line
   const [showScrollNav, setShowScrollNav] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   // ✅ Add this useEffect
   useEffect(() => {
@@ -613,24 +615,55 @@ export default function ProjectDetailPage() {
     <main className="bg-white min-h-screen pt-28 px-4 md:px-6">
       {/* Navbar */}
       <nav className="fixed top-0 left-0 w-full z-50 bg-[#2C6E49] h-20 shadow-md px-6 py-4 flex justify-between items-center">
-          <div className="text-4xl font-bold text-white ">SASINI TENNAKOON</div>
-          <div className="space-x-8 text-lg font-medium text-white font-[Lato]">
-            {/* Link to sections on landing page */}
-            <Link href="/#home" className="hover:text-white">Home</Link>
-            <Link href="/#about" className="hover:text-white">About</Link>
-            <Link href="/portfolio" className="hover:text-white">My Portfolio</Link>
-            <Link href="/#skills" className="hover:text-white">Profile & Skills</Link>
-            <a
-                href="https://wa.me/94776552988"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-white"
-                >
-                Contact
-             </a>
-          </div>
-      </nav>
+  {/* Logo */}
+  <div className="text-2xl sm:text-4xl font-bold text-white">SASINI TENNAKOON</div>
 
+  {/* Desktop Menu */}
+  <div className="hidden md:flex space-x-8 text-lg font-medium text-white font-[Lato]">
+    <Link href="/#home" className="hover:text-white">Home</Link>
+    <Link href="/#about" className="hover:text-white">About</Link>
+    <Link href="/portfolio" className="hover:text-white">My Portfolio</Link>
+    <Link href="/#skills" className="hover:text-white">Profile & Skills</Link>
+    <a
+      href="https://wa.me/94776552988"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="hover:text-white"
+    >
+      Contact
+    </a>
+  </div>
+
+  {/* Mobile Menu Button */}
+  <div className="md:hidden">
+    <button
+      onClick={() => setMobileMenuOpen(prev => !prev)}
+      className="text-white text-2xl focus:outline-none"
+      aria-label="Toggle Menu"
+    >
+      ☰
+    </button>
+  </div>
+
+  {/* Mobile Dropdown Menu */}
+  {mobileMenuOpen && (
+    <div className="absolute top-20 left-0 w-full bg-[#2C6E49] text-white flex flex-col space-y-4 py-4 px-6 md:hidden z-50">
+      <Link href="/#home" className="hover:text-white" onClick={() => setMobileMenuOpen(false)}>Home</Link>
+      <Link href="/#about" className="hover:text-white" onClick={() => setMobileMenuOpen(false)}>About</Link>
+      <Link href="/portfolio" className="hover:text-white" onClick={() => setMobileMenuOpen(false)}>My Portfolio</Link>
+      <Link href="/#skills" className="hover:text-white" onClick={() => setMobileMenuOpen(false)}>Profile & Skills</Link>
+      <a
+        href="https://wa.me/94776552988"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="hover:text-white"
+        onClick={() => setMobileMenuOpen(false)}
+      >
+        Contact
+      </a>
+    </div>
+  )}
+</nav>
       {/* Project Header */}
       <div className="text-center mb-12">
   <h1 className="text-3xl md:text-8xl font-bold text-black font-[Lato] mb-2">
