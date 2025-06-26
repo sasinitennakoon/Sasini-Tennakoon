@@ -871,133 +871,144 @@ useEffect(() => {
         )}
       </div>
 
-{/* UI Images */}
 {(project.uiMobileImages?.length > 0 || project.uiDesktopImages?.length > 0) && (
   <div className="max-w-6xl mx-auto mt-16 mb-20 px-4 sm:px-6">
-    <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold mb-6 text-center text-black font-[lato]">
+    <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold mb-12 text-center text-black font-[lato]">
       UI Design
     </h2>
 
-    {/* Mobile UI Section */}
-    {project.uiMobileImages?.length > 0 && (
-      <div
-        className={`relative w-full flex justify-center items-end overflow-visible ${
-          windowWidth < 480
-            ? 'h-[280px]'
-            : windowWidth < 640
-            ? 'h-[360px]'
-            : windowWidth < 768
-            ? 'h-[450px]'
-            : 'h-[600px]'
-        }`}
-      >
-        <div className="relative w-full h-full flex justify-center">
-          {project.uiMobileImages.map((src, i) => {
-            const totalImages = project.uiMobileImages.length;
-            const center = (totalImages - 1) / 2;
-            const distance = i - center;
-            const zIndex = totalImages - Math.abs(distance);
-            const bottomOffset = Math.abs(distance) * (windowWidth < 640 ? 6 : 10);
-
-            const horizontalOffset =
-              distance *
-              (windowWidth < 480
-                ? 45
-                : windowWidth < 640
-                ? 65
-                : windowWidth < 768
-                ? 90
-                : 140);
-
-            const imgWidth = windowWidth < 480 ? 120 : windowWidth < 640 ? 140 : 200;
-            const imgHeight = windowWidth < 480 ? 240 : windowWidth < 640 ? 300 : 430;
-
-            return (
-              <div
-                key={i}
-                className="absolute transition-all duration-300 hover:scale-105 hover:z-50"
-                style={{
-                  left: '50%',
-                  transform: `translateX(calc(-50% + ${horizontalOffset}px))`,
-                  zIndex,
-                  bottom: `${bottomOffset}px`,
-                }}
-              >
-                <div className="relative border-2 border-green-600 rounded-lg overflow-hidden shadow-md">
+    {/* ✅ Mobile View (<640px) */}
+    {windowWidth < 640 ? (
+      <>
+        {/* Mobile UI Carousel */}
+        {project.uiMobileImages?.length > 0 && (
+          <>
+            <h3 className="text-xl font-semibold text-center text-green-700 mb-4">Mobile UI</h3>
+            <div className="flex overflow-x-auto gap-4 snap-x snap-mandatory pb-4 -mx-4 px-4">
+              {project.uiMobileImages.map((src, i) => (
+                <div
+                  key={i}
+                  className="flex-shrink-0 snap-center w-[200px] border-2 border-green-600 rounded-xl overflow-hidden shadow-md"
+                >
                   <Image
                     src={src}
                     alt={`${project.title} mobile UI screen ${i + 1}`}
-                    width={imgWidth}
-                    height={imgHeight}
-                    className="object-contain"
+                    width={200}
+                    height={400}
+                    className="object-contain w-full h-auto"
                   />
                 </div>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    )}
+              ))}
+            </div>
+          </>
+        )}
 
-    {/* Desktop UI Section */}
-    {project.uiDesktopImages?.length > 0 && (
-      <div
-        className={`relative w-full flex justify-center items-end overflow-visible ${
-          windowWidth < 480
-            ? 'min-h-[180px]'
-            : windowWidth < 640
-            ? 'min-h-[240px]'
-            : windowWidth < 768
-            ? 'min-h-[300px]'
-            : 'min-h-[350px]'
-        }`}
-      >
-        <div className="relative w-full h-full flex justify-center">
-          {project.uiDesktopImages.map((src, i) => {
-            const totalImages = project.uiDesktopImages.length;
-            const center = (totalImages - 1) / 2;
-            const distance = i - center;
-            const zIndex = totalImages - Math.abs(distance);
-            const bottomOffset = Math.abs(distance) * (windowWidth < 640 ? 4 : 8);
-
-            const horizontalOffset =
-              distance *
-              (windowWidth < 480
-                ? 55
-                : windowWidth < 640
-                ? 80
-                : windowWidth < 768
-                ? 110
-                : 160);
-
-            const imgWidth = windowWidth < 480 ? 220 : windowWidth < 640 ? 260 : 400;
-            const imgHeight = windowWidth < 480 ? 120 : windowWidth < 640 ? 160 : 230;
-
-            return (
-              <div
-                key={i}
-                className="absolute transition-all duration-300 hover:scale-105 hover:z-50"
-                style={{
-                  left: '50%',
-                  transform: `translateX(calc(-50% + ${horizontalOffset}px))`,
-                  zIndex,
-                  bottom: `${bottomOffset}px`,
-                }}
-              >
-                <div className="relative border-2 border-green-600 rounded-lg overflow-hidden shadow-md">
+        {/* Desktop UI Grid */}
+        {project.uiDesktopImages?.length > 0 && (
+          <>
+            <h3 className="text-xl font-semibold text-center text-green-700 mt-8 mb-4">Desktop UI</h3>
+            <div className="grid grid-cols-1 gap-4">
+              {project.uiDesktopImages.map((src, i) => (
+                <div
+                  key={i}
+                  className="border-2 border-green-600 rounded-xl overflow-hidden shadow-md"
+                >
                   <Image
                     src={src}
                     alt={`${project.title} desktop UI screen ${i + 1}`}
-                    width={imgWidth}
-                    height={imgHeight}
-                    className="object-contain"
+                    width={600}
+                    height={300}
+                    className="object-contain w-full h-auto"
                   />
                 </div>
-              </div>
-            );
-          })}
-        </div>
-      </div>
+              ))}
+            </div>
+          </>
+        )}
+      </>
+    ) : (
+      <>
+        {/* ✅ Desktop View (original stacked layout) */}
+
+        {/* Mobile UI Stacked */}
+        {project.uiMobileImages?.length > 0 && (
+          <div className="relative h-[500px] md:h-[600px] w-full flex justify-center items-end overflow-visible px-4">
+            <div className="relative w-full h-full flex justify-center">
+              {project.uiMobileImages.map((src, i) => {
+                const totalImages = project.uiMobileImages.length;
+                const centerPosition = (totalImages - 1) / 2;
+                const distanceFromCenter = i - centerPosition;
+                const zIndex = totalImages - Math.abs(distanceFromCenter);
+                const bottomOffset = Math.abs(distanceFromCenter) * 12;
+                const horizontalOffset =
+                  distanceFromCenter * (distanceFromCenter === 0 ? 0 : 160);
+
+                return (
+                  <div
+                    key={i}
+                    className="absolute transition-all duration-300 hover:scale-110 hover:z-50"
+                    style={{
+                      left: '50%',
+                      transform: `translateX(calc(-50% + ${horizontalOffset}px))`,
+                      zIndex,
+                      bottom: `${bottomOffset}px`,
+                    }}
+                  >
+                    <div className="relative border-2 border-green-600 rounded-lg overflow-hidden">
+                      <Image
+                        src={src}
+                        alt={`${project.title} mobile UI screen ${i + 1}`}
+                        width={200}
+                        height={430}
+                        className="object-contain"
+                      />
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        )}
+
+        {/* Desktop UI Stacked */}
+        {project.uiDesktopImages?.length > 0 && (
+          <div className="relative min-h-[350px] w-full flex justify-center items-end overflow-visible px-4">
+            <div className="relative w-full h-full flex justify-center">
+              {project.uiDesktopImages.map((src, i) => {
+                const totalImages = project.uiDesktopImages.length;
+                const centerPosition = (totalImages - 1) / 2;
+                const distanceFromCenter = i - centerPosition;
+                const zIndex = totalImages - Math.abs(distanceFromCenter);
+                const bottomOffset = Math.abs(distanceFromCenter) * 10;
+                const horizontalOffset = distanceFromCenter * 180;
+
+                return (
+                  <div
+                    key={i}
+                    className="absolute transition-all duration-300 hover:scale-105 hover:z-50"
+                    style={{
+                      left: '50%',
+                      transform: `translateX(calc(-50% + ${horizontalOffset}px))`,
+                      zIndex,
+                      bottom: `${bottomOffset}px`,
+                    }}
+                  >
+                    <div className="relative border-2 border-green-600 rounded-lg overflow-hidden">
+                      <Image
+                        src={src}
+                        alt={`${project.title} desktop UI screen ${i + 1}`}
+                        width={400}
+                        height={230}
+                        className="object-contain"
+                      />
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        )}
+      </>
     )}
   </div>
 )}
