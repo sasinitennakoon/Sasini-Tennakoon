@@ -1,5 +1,6 @@
 'use client';
 import React, { useState, useEffect } from 'react';
+import { useParams, useRouter } from 'next/navigation';
 import Image from 'next/image';
 
 const projects = [
@@ -63,29 +64,20 @@ export default function ProjectDetailPage() {
   const params = useParams();
   const router = useRouter();
 
-  // ✅ Add this line
-  const [showScrollNav, setShowScrollNav] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-
-  // ✅ Add this useEffect
   useEffect(() => {
     const handleScroll = () => {
-      const scrolledDown = window.scrollY > 300;
-      setShowScrollNav(scrolledDown);
+      setMobileMenuOpen(false); // Optional: auto-close menu on scroll
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
   return (
     <div className="flex flex-col min-h-screen">
       {/* 🔻 Navbar */}
-      <nav
-        className={`fixed top-0 left-0 w-full z-50 bg-[#2C6E49] h-20 shadow-md px-6 py-4 transition-opacity duration-500 ${
-          showNavbar ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
-        }`}
-      >
+      <nav className="fixed top-0 left-0 w-full z-50 bg-[#2C6E49] h-20 shadow-md px-6 py-4">
         <div className="flex justify-between items-center h-full">
           <div className="text-3xl font-bold text-white font-[Lato]">SASINI TENNAKOON</div>
           <div className="md:hidden">
@@ -113,7 +105,7 @@ export default function ProjectDetailPage() {
         </div>
 
         {mobileMenuOpen && (
-          <div className="md:hidden mt-4 flex flex-col space-y-3 text-white font-[Lato] text-base">
+          <div className="absolute top-20 left-0 w-full bg-[#2C6E49] md:hidden flex flex-col space-y-3 text-white font-[Lato] text-base px-6 py-4 shadow-md z-40">
             <a href="/" className="hover:text-white">Home</a>
             <a href="/#about" className="hover:text-white">About</a>
             <a href="/portfolio" className="hover:text-white">My Portfolio</a>
