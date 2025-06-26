@@ -891,7 +891,7 @@ useEffect(() => {
         {/* Mobile UI Carousel */}
         {project.uiMobileImages?.length > 0 && (
           <>
-            <h3 className="text-xl font-semibold text-center text-green-700 mb-4">Mobile UI</h3>
+            
             <div className="flex overflow-x-auto gap-4 snap-x snap-mandatory pb-4 -mx-4 px-4">
               {project.uiMobileImages.map((src, i) => (
                 <div
@@ -914,7 +914,7 @@ useEffect(() => {
         {/* Desktop UI Carousel */}
         {project.uiDesktopImages?.length > 0 && (
           <>
-            <h3 className="text-xl font-semibold text-center text-green-700 mt-8 mb-4">Desktop UI</h3>
+            
             <div className="flex overflow-x-auto gap-4 snap-x snap-mandatory pb-4 -mx-4 px-4">
               {project.uiDesktopImages.map((src, i) => (
                 <div
