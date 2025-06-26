@@ -566,16 +566,28 @@ export default function ProjectDetailPage() {
   // ✅ Add this line
   const [showScrollNav, setShowScrollNav] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+   const [windowWidth, setWindowWidth] = useState(0);
 
   // ✅ Add this useEffect
-  useEffect(() => {
+useEffect(() => {
     const handleScroll = () => {
-      const scrolledDown = window.scrollY > 300;
-      setShowScrollNav(scrolledDown);
+      setShowScrollNav(window.scrollY > 300);
     };
 
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    // Set initial width
+    handleResize();
+
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
 
@@ -703,7 +715,7 @@ export default function ProjectDetailPage() {
 
       {/* Cover Image */}
 <div className="mb-10 w-full flex justify-center">
-  <div className="relative w-[1440px] h-[398px] overflow-hidden rounded-lg shadow-lg">
+  <div className="relative w-full max-w-[1440px] aspect-[1440/398] rounded-lg shadow-lg overflow-hidden">
     <Image 
       src={project.coverImage} 
       alt={`${project.title} cover image`} 
@@ -714,6 +726,7 @@ export default function ProjectDetailPage() {
     />
   </div>
 </div>
+
 
 
 
@@ -859,22 +872,26 @@ export default function ProjectDetailPage() {
       </div>
 
 
-      {/* UI Images */}
+    {/* UI Images */}
 {(project.uiMobileImages?.length > 0 || project.uiDesktopImages?.length > 0) && (
   <div className="max-w-6xl mx-auto mt-16 mb-20">
     <h2 className="text-6xl font-semibold mb-6 text-center text-black font-[lato]">UI Design</h2>
 
     {/* Mobile UI Section */}
     {project.uiMobileImages?.length > 0 && (
-      <div className="relative h-[500px] md:h-[600px] w-full flex justify-center items-end overflow-visible px-4">
+      <div className="relative h-[380px] sm:h-[500px] md:h-[600px] w-full flex justify-center items-end overflow-visible px-4">
         <div className="relative w-full h-full flex justify-center">
           {project.uiMobileImages.map((src, i) => {
             const totalImages = project.uiMobileImages.length;
             const centerPosition = (totalImages - 1) / 2;
             const distanceFromCenter = i - centerPosition;
             const zIndex = totalImages - Math.abs(distanceFromCenter);
-            const bottomOffset = Math.abs(distanceFromCenter) * 20;
-            const horizontalOffset = distanceFromCenter * 160;
+            const bottomOffset = Math.abs(distanceFromCenter) * 12;  // Reduced for mobile
+            // Adjust horizontal offset for smaller screens:
+            // Use smaller offset on small screens, larger on medium+
+            const horizontalOffset =
+              distanceFromCenter *
+              (windowWidth < 640 ? 90 : distanceFromCenter === 0 ? 0 : 160);
 
             return (
               <div
@@ -905,15 +922,18 @@ export default function ProjectDetailPage() {
 
     {/* Desktop UI Section */}
     {project.uiDesktopImages?.length > 0 && (
-      <div className="relative min-h-[350px] w-full flex justify-center items-end overflow-visible px-4">
+      <div className="relative min-h-[280px] sm:min-h-[350px] w-full flex justify-center items-end overflow-visible px-4">
         <div className="relative w-full h-full flex justify-center">
           {project.uiDesktopImages.map((src, i) => {
             const totalImages = project.uiDesktopImages.length;
             const centerPosition = (totalImages - 1) / 2;
             const distanceFromCenter = i - centerPosition;
             const zIndex = totalImages - Math.abs(distanceFromCenter);
-            const bottomOffset = Math.abs(distanceFromCenter) * 15;
-            const horizontalOffset = distanceFromCenter * 180;
+            const bottomOffset = Math.abs(distanceFromCenter) * 10;  // Reduced for mobile
+            // Horizontal offset smaller on small screens, larger on medium+
+            const horizontalOffset =
+              distanceFromCenter *
+              (windowWidth < 640 ? 100 : 180);
 
             return (
               <div
@@ -943,8 +963,6 @@ export default function ProjectDetailPage() {
     )}
   </div>
 )}
-
-
 
 
 
