@@ -7,16 +7,16 @@ import AutoScrollingCards from './components/AutoScrollingCards.jsx';
 export default function Home() {
   const [showHome, setShowHome] = useState(false);
   const [showNavbar, setShowNavbar] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const homeRef = useRef(null);
 
   const scrollToHome = () => {
-  setShowHome(true);
-  setShowNavbar(true);
-  setTimeout(() => {
-    document.getElementById("intro")?.scrollIntoView({ behavior: 'smooth' });
-  }, 100);
-};
-
+    setShowHome(true);
+    setShowNavbar(true);
+    setTimeout(() => {
+      document.getElementById("intro")?.scrollIntoView({ behavior: 'smooth' });
+    }, 100);
+  };
 
   useEffect(() => {
     const handleScroll = (e) => {
@@ -24,7 +24,6 @@ export default function Home() {
         scrollToHome();
       }
     };
-
     window.addEventListener('wheel', handleScroll);
     return () => window.removeEventListener('wheel', handleScroll);
   }, [showHome]);
@@ -33,14 +32,8 @@ export default function Home() {
     const handleWindowScroll = () => {
       const scrollY = window.scrollY;
       const threshold = window.innerHeight * 0.8;
-
-      if (scrollY >= threshold) {
-        setShowNavbar(true);
-      } else {
-        setShowNavbar(false);
-      }
+      setShowNavbar(scrollY >= threshold);
     };
-
     window.addEventListener('scroll', handleWindowScroll);
     return () => window.removeEventListener('scroll', handleWindowScroll);
   }, []);
@@ -49,28 +42,18 @@ export default function Home() {
     <>
       {/* 🔹 Landing Page */}
       <main id="home" className="relative min-h-screen w-full">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/landing bg.jpg')" }}
-        ></div>
-
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/landing bg.jpg')" }}></div>
         <div className="relative z-10 flex items-center justify-center min-h-screen px-4 text-center">
           <div>
-            <h1 className="text-4xl sm:text-6xl font-bold text-black mb-2 drop-shadow-md">
-              SASINI TENNAKOON
-            </h1>
+            <h1 className="text-4xl sm:text-6xl font-bold text-black mb-2 drop-shadow-md">SASINI TENNAKOON</h1>
             <br />
-            <h2 className="text-2lg sm:text-4xl font-semibold text-black mb-4 drop-shadow-md">
-              UI/UX Designer
-            </h2>
-            <br />
-            <br />
+            <h2 className="text-2lg sm:text-4xl font-semibold text-black mb-4 drop-shadow-md">UI/UX Designer</h2>
+            <br /><br />
             <p className="text-2lg sm:text-2xl text-black mb-6 max-w-5xl mx-auto drop-shadow-md leading-relaxed">
               I am a UI/UX Designer and Front-End Developer creating modern <br />
               and responsive designs for web and mobile. Let us work together.<br />
               Thank you!
             </p>
-
             <button
               onClick={scrollToHome}
               className="bg-green-700 hover:bg-green-800 text-white font-semibold text-2lg sm:text-2xl py-4 px-20 rounded transition duration-200"
@@ -82,69 +65,43 @@ export default function Home() {
       </main>
 
       {/* 🔻 Navbar */}
-        <nav
-          className={`fixed top-0 left-0 w-full z-50 bg-[#2C6E49] h-20 shadow-md px-6 py-4 flex justify-between items-center transition-opacity duration-500 ${
-            showNavbar ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
-          }`}
-        >
-          <div className="text-4xl font-bold text-white ">SASINI TENNAKOON</div>
-          <div className="space-x-8 text-lg font-medium text-white font-[lato]">
+      <nav className={`fixed top-0 left-0 w-full z-50 bg-[#2C6E49] shadow-md px-6 py-4 transition-opacity duration-500 ${showNavbar ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>        
+        <div className="flex justify-between items-center">
+          <div className="text-2xl sm:text-4xl font-bold text-white">SASINI TENNAKOON</div>
+          <div className="md:hidden">
+            <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="text-white text-2xl">☰</button>
+          </div>
+          <div className="hidden md:flex space-x-8 text-lg font-medium text-white font-[lato]">
             <a href="#home" className="hover:text-white">Home</a>
             <a href="#about" className="hover:text-white">About</a>
-            <Link href="/portfolio" className="hover:text-white">My Portfolio</Link> {/* <-- Changed here */}
+            <Link href="/portfolio" className="hover:text-white">My Portfolio</Link>
             <a href="#skills" className="hover:text-white">Profile & Skills</a>
-            <a
-                href="https://wa.me/94776552988"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-white"
-                >
-                Contact
-             </a>
+            <a href="https://wa.me/94776552988" target="_blank" rel="noopener noreferrer" className="hover:text-white">Contact</a>
           </div>
-        </nav>
-
+        </div>
+        {mobileMenuOpen && (
+          <div className="mt-4 flex flex-col md:hidden space-y-3 text-white text-base font-[lato]">
+            <a href="#home" className="hover:text-white">Home</a>
+            <a href="#about" className="hover:text-white">About</a>
+            <Link href="/portfolio" className="hover:text-white">My Portfolio</Link>
+            <a href="#skills" className="hover:text-white">Profile & Skills</a>
+            <a href="https://wa.me/94776552988" target="_blank" rel="noopener noreferrer" className="hover:text-white">Contact</a>
+          </div>
+        )}
+      </nav>
 
       {/* 🔻 Home Section */}
       {showHome && (
-        <section
-          ref={homeRef}
-          id="intro"
-          className="bg-white min-h-screen pt-20 transition-opacity duration-1000 ease-in-out"
-        >
-          <div className="container mx-auto px-0">
-            <div className="flex flex-col lg:flex-row">
-              {/* Left Column - Image */}
-              <div className="lg:w-1/2">
-                <div className="relative w-full h-full">
-                  <Image
-                    src="/profile2.jpeg"
-                    alt="Sasini Tennakoon"
-                    width={600}
-                    height={100}
-                    className="rounded-lg object-cover w-full h-auto"
-                    style={{
-                      objectPosition: 'left center'
-                    }}
-                  />
-                </div>
+        <section ref={homeRef} id="intro" className="bg-white min-h-screen pt-20 transition-opacity duration-1000 ease-in-out">
+          <div className="container mx-auto px-4">
+            <div className="flex flex-col lg:flex-row items-center gap-8">
+              <div className="lg:w-1/2 w-full">
+                <Image src="/profile2.jpeg" alt="Sasini Tennakoon" width={600} height={100} className="rounded-lg object-cover w-full h-auto" style={{ objectPosition: 'left center' }} />
               </div>
-
-              {/* Right Column - Content */}
-              <div
-  id="about"  // Add this id for scrolling target
-  className="lg:w-1/2 space-y-6 p-8 lg:p-12"
->
-                <h1 className="text-4xl md:text-5xl font-bold text-black">
-                  Hi,<br /><br />
-                  <span className="text-green-700">I am a UI/UX Designer</span>
-                </h1>
+              <div id="about" className="lg:w-1/2 w-full space-y-6 p-6">
+                <h1 className="text-3xl md:text-5xl font-bold text-black">Hi,<br /><span className="text-green-700">I am a UI/UX Designer</span></h1>
                 <p className="text-lg text-black leading-relaxed">
-                  Passionate and detail-oriented UI/UX engineer with a focus on
-                  designing user-friendly and engaging digital experiences. Currently
-                  pursuing a BSc in Information Systems, I am eager to apply my
-                  creativity and problem-solving skills to enhance user interaction and
-                  satisfaction through thoughtful design solutions.
+                  Passionate and detail-oriented UI/UX engineer with a focus on designing user-friendly and engaging digital experiences. Currently pursuing a BSc in Information Systems, I am eager to apply my creativity and problem-solving skills to enhance user interaction and satisfaction through thoughtful design solutions.
                 </p>
               </div>
             </div>
@@ -154,192 +111,62 @@ export default function Home() {
 
       {/* Portfolio Section */}
       <section id="portfolio" className="py-20 bg-gray-50 overflow-hidden">
-        <div className="container mx-auto px-6">
-          <h1 className="text-3xl md:text-6xl font-bold text-center text-black mb-16 font-[lato]">
-            MY PORTFOLIO
-          </h1>
+        <div className="container mx-auto px-4">
+          <h1 className="text-3xl md:text-6xl font-bold text-center text-black mb-16 font-[lato]">MY PORTFOLIO</h1>
           <AutoScrollingCards />
         </div>
       </section>
+
+      {/* Skills Section */}
       <section id="skills" className="py-12 bg-white">
-  <div className="max-w-[1200px] mx-auto px-4">
-    <h1 className="text-3xl md:text-6xl font-bold text-center text-black mb-16 font-[Lato]">
-      Profile & Skills
-    </h1>
+        <div className="max-w-[1200px] mx-auto px-4">
+          <h1 className="text-3xl md:text-6xl font-bold text-center text-black mb-16 font-[Lato]">Profile & Skills</h1>
+          <div className="flex flex-col md:flex-row gap-x-16 gap-y-12 mb-16">
+            <div className="md:w-1/2">
+              <h3 className="text-4xl font-bold text-black mb-6 border-b-2 border-green-600 pb-2 font-[Roboto]">Bio Details</h3>
+              <div className="space-y-4">
+                <div className="flex"><span className="w-32 font-medium text-black">Name</span><span className="mx-2">:</span><span>Sasini Tennakoon</span></div>
+                <div className="flex"><span className="w-32 font-medium text-black">Address</span><span className="mx-2">:</span><span>Colombo, Sri Lanka</span></div>
+                <div className="flex"><span className="w-32 font-medium text-black">Phone no</span><span className="mx-2">:</span><span>0776552988</span></div>
+                <div className="flex"><span className="w-32 font-medium text-black">Email</span><span className="mx-2">:</span><span>tennakoonsasi5@gmail.com</span></div>
+              </div>
+            </div>
+            <div className="md:w-1/2">
+              <h3 className="text-4xl font-bold text-black mb-6 border-b-2 border-green-600 pb-2 font-[Roboto]">Working Experiences</h3>
+              <div className="flex items-start gap-4">
+                <div className="w-28">
+                  <Image src="/work.png" alt="Working Illustration" width={112} height={112} className="object-contain" />
+                </div>
+                <div>
+                  <h4 className="text-xl font-semibold text-black">Business Analyst - Intern</h4>
+                  <p className="text-black mb-1">VizuaMatix (Pvt) Ltd</p>
+                  <p className="text-black text-sm">19 December 2024 - Present</p>
+                </div>
+              </div>
+            </div>
+          </div>
 
-    {/* Bio and Work Experience */}
-    <div className="flex flex-col md:flex-row gap-x-16 gap-y-12 mb-16">
-      {/* Bio Details */}
-      <div className="md:w-1/2">
-        <h3 className="text-4xl font-bold text-black mb-6 border-b-2 border-green-600 pb-2 font-[Roboto]">
-          Bio Details
-        </h3>
-        <div className="space-y-4">
-          <div className="flex">
-            <span className="w-32 font-medium text-black">Name</span>
-            <span className="mx-2">:</span>
-            <span>Sasini Tennakoon</span>
-          </div>
-          <div className="flex">
-            <span className="w-32 font-medium text-black">Address</span>
-            <span className="mx-2">:</span>
-            <span>Colombo, Sri Lanka</span>
-          </div>
-          
-          <div className="flex">
-            <span className="w-32 font-medium text-black">Phone no</span>
-            <span className="mx-2">:</span>
-            <span>0776552988</span>
-          </div>
-          <div className="flex">
-            <span className="w-32 font-medium text-black">Email</span>
-            <span className="mx-2">:</span>
-            <span>tennakoonsasi5@gmail.com</span>
-          </div>
-        </div>
-      </div>
-
-      {/* Working Experience */}
-      <div className="md:w-1/2">
-        <h3 className="text-4xl font-bold text-black mb-6 border-b-2 border-green-600 pb-2 font-[Roboto]">
-          Working Experiences
-        </h3>
-        <div className="flex items-start gap-4">
-          <div className="w-28">
-            <Image
-              src="/work.png"
-              alt="Working Illustration"
-              width={112}
-              height={112}
-              className="object-contain"
-            />
-          </div>
           <div>
-            <h4 className="text-xl font-semibold text-black">
-              Business Analyst - Intern
-            </h4>
-            <p className="text-black mb-1">VizuaMatix (Pvt) Ltd</p>
-            <p className="text-black text-sm">19 December 2024 - Present</p>
+            <h3 className="text-4xl font-bold text-black mb-6 border-b-2 border-green-600 pb-2 font-[Roboto]">My Skills</h3>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
+              {[{ name: 'HTML', icon: '/html-icon.png' },{ name: 'CSS', icon: '/css-icon.png' },{ name: 'JavaScript', icon: '/js-icon.png' },{ name: 'Figma', icon: '/figma-icon.png' },{ name: 'Tailwind CSS', icon: '/tailwind-icon.png' },{ name: 'Illustrator', icon: '/Illustrator.png' },{ name: 'Animate', icon: '/Animate.png' },{ name: 'Xd', icon: '/Xd.png' },{ name: 'Photoshop', icon: '/Photoshop.png' },{ name: 'Premiere Pro', icon: '/Premiere Pro.png' },{ name: 'Next.js', icon: '/Next.js_Logo_1.png' },{ name: 'Type Script', icon: '/types.png' },{ name: 'React', icon: '/re.png' }].map((skill) => (
+                <div key={skill.name} className="flex flex-col items-center">
+                  <div className="w-24 h-24 mb-2">
+                    <Image src={skill.icon} alt={skill.name} width={96} height={96} className="object-contain w-full h-full" />
+                  </div>
+                  <span className="text-black text-center">{skill.name}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-    </div>
+      </section>
 
-
-    {/* Skills */}
-<div>
-  <h3 className="text-4xl font-bold text-black mb-6 border-b-2 border-green-600 pb-2 font-[Roboto]">
-    My Skills
-  </h3>
-  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
-    {[
-      { name: 'HTML', icon: '/html-icon.png' },
-      { name: 'CSS', icon: '/css-icon.png' },
-      { name: 'JavaScript', icon: '/js-icon.png' },
-      { name: 'Figma', icon: '/figma-icon.png' },
-      { name: 'Tailwind CSS', icon: '/tailwind-icon.png' },
-      { name: 'Illustrator', icon: '/Illustrator.png' },
-      { name: 'Animate', icon: '/Animate.png' },
-      { name: 'Xd', icon: '/Xd.png' },
-      { name: 'Photoshop', icon: '/Photoshop.png' },
-      { name: 'Premiere Pro', icon: '/Premiere Pro.png' },
-      { name: 'Next.js', icon: '/Next.js_Logo_1.png' },
-      { name: 'Type Script', icon: '/types.png' },
-      { name: 'React', icon: '/re.png' },
-
-    ].map((skill) => (
-      <div key={skill.name} className="flex flex-col items-center">
-        <div className="w-24 h-24 mb-2">
-          <Image
-            src={skill.icon}
-            alt={skill.name}
-            width={96}
-            height={96}
-            className="object-contain w-full h-full"
-          />
+      <footer className="bg-[#2C6E49] text-white py-8 mt-20">
+        <div className="text-center">
+          <p className="text-mm">&copy; {new Date().getFullYear()} Sasini Tennakoon. All rights reserved.</p>
         </div>
-        <span className="text-black text-center">{skill.name}</span>
-      </div>
-    ))}
-  </div>
-</div>
-
-  </div>
-</section>
-
-{/*contact
-<section id="contact" className="py-20 bg-white">
-  <div className="mx-auto max-w-6xl px-2 sm:px-4 md:px-6">
-    <h1 className="text-3xl md:text-6xl font-bold text-center text-gray-800 mb-12 font-[Lato]">
-      DROP ME A LINE
-    </h1>
-    <form
-      action="https://formspree.io/f/yourFormID" // ← Replace with your Formspree form ID
-      method="POST"
-      className="space-y-6"
-    >
-      {/* Name + Email *
-      <div className="flex flex-col md:flex-row gap-4">
-        <input
-          type="text"
-          name="name"
-          placeholder="Your Name"
-          required
-          className="w-full px-4 py-3 bg-[#2C6E49] text-white placeholder-gray-300 rounded focus:outline-none"
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Your Email"
-          required
-          className="w-full px-4 py-3 bg-[#2C6E49] text-white placeholder-gray-300 rounded focus:outline-none"
-        />
-      </div>
-
-      {/* Subject *
-      <input
-        type="text"
-        name="subject"
-        placeholder="Your Subject"
-        required
-        className="w-full px-4 py-3 bg-[#2C6E49] text-white placeholder-gray-300 rounded focus:outline-none"
-      />
-
-      {/* Message *
-      <textarea
-        name="message"
-        placeholder="Your Message"
-        rows="8"
-        required
-        className="w-full px-4 py-3 bg-[#2C6E49] text-white placeholder-gray-300 rounded focus:outline-none"
-      ></textarea>
-
-      {/* Submit Button *
-      <div className="text-center pt-4">
-        <button
-          type="submit"
-          className="bg-[#2C6E49] text-white px-6 py-3 rounded hover:bg-green-900 font-semibold"
-        >
-          Shoot a Message
-        </button>
-      </div>
-    </form>
-  </div>
-</section>*/}
-
-     <footer className="bg-[#2C6E49] text-white py-8 mt-20">
-  <div className="text-center">
-    <p className="text-mm">
-      &copy; {new Date().getFullYear()} Sasini Tennakoon. All rights reserved.
-    </p>
-  </div>
-</footer>
-
-
-
-
-
+      </footer>
     </>
   );
 }
-
