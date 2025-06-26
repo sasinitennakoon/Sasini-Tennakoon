@@ -89,11 +89,11 @@ export default function Home() {
       </nav>
 
       {showHome && (
-  <section
-    ref={homeRef}
-    id="intro"
-    className="bg-white py-12 md:py-16 transition-opacity duration-1000 ease-in-out"
-  >
+        <section
+          ref={homeRef}
+          id="intro"
+          className="bg-white py-12 md:py-16 transition-opacity duration-1000 ease-in-out"
+        >
           <div className="container mx-auto px-4">
             <div className="flex flex-col lg:flex-row items-center gap-8">
               <div className="lg:w-1/2 w-full">
@@ -101,7 +101,7 @@ export default function Home() {
               </div>
               <div id="about" className="lg:w-1/2 w-full space-y-6 p-6">
                 <h1 className="text-3xl md:text-5xl font-bold text-black">Hi,<br /><span className="text-green-700">I am a UI/UX Designer</span></h1>
-                <p className="text-lg text-black leading-relaxed">
+                <p className="text-lg text-gray-900 leading-relaxed">
                   Passionate and detail-oriented UI/UX engineer with a focus on designing user-friendly and engaging digital experiences. Currently pursuing a BSc in Information Systems, I am eager to apply my creativity and problem-solving skills to enhance user interaction and satisfaction through thoughtful design solutions.
                 </p>
               </div>
@@ -112,18 +112,18 @@ export default function Home() {
 
       <section id="portfolio" className="py-20 bg-gray-50 overflow-hidden">
         <div className="container mx-auto px-4">
-          <h1 className="text-3xl md:text-6xl font-bold text-center text-black mb-16 font-[lato]">MY PORTFOLIO</h1>
+          <h1 className="text-3xl md:text-6xl font-bold text-center text-gray-900 mb-16 font-[lato]">MY PORTFOLIO</h1>
           <AutoScrollingCards />
         </div>
       </section>
 
       <section id="skills" className="py-12 bg-white">
         <div className="max-w-[1200px] mx-auto px-4">
-          <h1 className="text-3xl md:text-6xl font-bold text-center text-black mb-16 font-[Lato]">Profile & Skills</h1>
+          <h1 className="text-3xl md:text-6xl font-bold text-center text-gray-900 mb-16 font-[Lato]">Profile & Skills</h1>
           <div className="flex flex-col md:flex-row gap-x-16 gap-y-12 mb-16">
             <div className="md:w-1/2">
-              <h3 className="text-4xl font-bold text-black mb-6 border-b-2 border-green-600 pb-2 font-[Roboto]">Bio Details</h3>
-              <div className="space-y-4 text-black">
+              <h3 className="text-4xl font-bold text-gray-900 mb-6 border-b-2 border-green-600 pb-2 font-[Roboto]">Bio Details</h3>
+              <div className="space-y-4 text-gray-900">
                 <div className="flex"><span className="w-32 font-medium">Name</span><span className="mx-2">:</span><span>Sasini Tennakoon</span></div>
                 <div className="flex"><span className="w-32 font-medium">Address</span><span className="mx-2">:</span><span>Colombo, Sri Lanka</span></div>
                 <div className="flex"><span className="w-32 font-medium">Phone no</span><span className="mx-2">:</span><span>0776552988</span></div>
@@ -131,12 +131,12 @@ export default function Home() {
               </div>
             </div>
             <div className="md:w-1/2">
-              <h3 className="text-4xl font-bold text-black mb-6 border-b-2 border-green-600 pb-2 font-[Roboto]">Working Experiences</h3>
+              <h3 className="text-4xl font-bold text-gray-900 mb-6 border-b-2 border-green-600 pb-2 font-[Roboto]">Working Experiences</h3>
               <div className="flex items-start gap-4">
                 <div className="w-28">
                   <Image src="/work.png" alt="Working Illustration" width={112} height={112} className="object-contain" />
                 </div>
-                <div className="text-black">
+                <div className="text-gray-900">
                   <h4 className="text-xl font-semibold">Business Analyst - Intern</h4>
                   <p className="mb-1">VizuaMatix (Pvt) Ltd</p>
                   <p className="text-sm">19 December 2024 - Present</p>
@@ -146,14 +146,14 @@ export default function Home() {
           </div>
 
           <div>
-            <h3 className="text-4xl font-bold text-black mb-6 border-b-2 border-green-600 pb-2 font-[Roboto]">My Skills</h3>
+            <h3 className="text-4xl font-bold text-gray-900 mb-6 border-b-2 border-green-600 pb-2 font-[Roboto]">My Skills</h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
               {[{ name: 'HTML', icon: '/html-icon.png' },{ name: 'CSS', icon: '/css-icon.png' },{ name: 'JavaScript', icon: '/js-icon.png' },{ name: 'Figma', icon: '/figma-icon.png' },{ name: 'Tailwind CSS', icon: '/tailwind-icon.png' },{ name: 'Illustrator', icon: '/Illustrator.png' },{ name: 'Animate', icon: '/Animate.png' },{ name: 'Xd', icon: '/Xd.png' },{ name: 'Photoshop', icon: '/Photoshop.png' },{ name: 'Premiere Pro', icon: '/Premiere Pro.png' },{ name: 'Next.js', icon: '/Next.js_Logo_1.png' },{ name: 'Type Script', icon: '/types.png' },{ name: 'React', icon: '/re.png' }].map((skill) => (
                 <div key={skill.name} className="flex flex-col items-center">
                   <div className="w-24 h-24 mb-2">
                     <Image src={skill.icon} alt={skill.name} width={96} height={96} className="object-contain w-full h-full" />
                   </div>
-                  <span className="text-black text-center">{skill.name}</span>
+                  <span className="text-gray-900 text-center">{skill.name}</span>
                 </div>
               ))}
             </div>
@@ -161,9 +161,10 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="bg-[#2C6E49] text-white py-8 mt-20">
+      <footer className="bg-[#2C6E49] text-white py-8 w-full">
         <div className="text-center">
           <p className="text-mm">&copy; {new Date().getFullYear()} Sasini Tennakoon. All rights reserved.</p>
+          
         </div>
       </footer>
     </>
