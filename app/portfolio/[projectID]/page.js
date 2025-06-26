@@ -677,11 +677,13 @@ useEffect(() => {
   )}
 </nav>
       {/* Project Header */}
-      <div className="text-center mb-12">
-  <h1 className="text-3xl md:text-8xl font-bold text-black font-[Lato] mb-2">
+      <div className="text-center mb-12 px-4">
+  <h1 className="text-4xl sm:text-5xl md:text-8xl font-bold text-black font-[Lato] mb-3">
     {project.title}
   </h1>
-  <p className="text-lg md:text-xl text-black">{project.subtitle}</p>
+  <p className="text-base sm:text-lg md:text-xl text-black">
+    {project.subtitle}
+  </p>
 
   <div className="flex justify-between mt-6 px-4 md:px-0 max-w-6xl mx-auto">
     {/* Previous Button */}
