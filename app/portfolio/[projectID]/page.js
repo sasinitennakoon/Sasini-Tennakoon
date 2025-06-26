@@ -820,7 +820,7 @@ useEffect(() => {
                   className={`bg-white border border-gray-200 rounded-2xl shadow-md p-6 hover:shadow-xl transition duration-300 ${font.className}`}
                 >
                   <p className="text-6xl mb-2" style={{ color: primaryColor }}>{font.sample}</p>
-                  <h3 className="text-lg font-semibold mb-2">{font.name}</h3>
+                  <h3 className="text-lg font-semibold mb-2 text-black">{font.name}</h3>
                   <p className="text-sm text-black mb-1">{font.usage}</p>
                   <p className="text-sm text-black whitespace-pre-line leading-snug">{font.paragraph}</p>
                   <p className="text-sm text-black mt-2">{font.numbers}</p>
