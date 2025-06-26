@@ -871,27 +871,37 @@ useEffect(() => {
         )}
       </div>
 
-
-    {/* UI Images */}
+{/* UI Images */}
 {(project.uiMobileImages?.length > 0 || project.uiDesktopImages?.length > 0) && (
-  <div className="max-w-6xl mx-auto mt-16 mb-20">
+  <div className="max-w-6xl mx-auto mt-16 mb-20 px-4 sm:px-6">
     <h2 className="text-6xl font-semibold mb-6 text-center text-black font-[lato]">UI Design</h2>
 
     {/* Mobile UI Section */}
     {project.uiMobileImages?.length > 0 && (
-      <div className="relative h-[380px] sm:h-[500px] md:h-[600px] w-full flex justify-center items-end overflow-visible px-4">
+      <div
+        className={`relative w-full flex justify-center items-end overflow-visible px-4
+          ${windowWidth < 640 ? 'h-[320px]' : windowWidth < 768 ? 'h-[450px]' : 'h-[600px]'}
+        `}
+      >
         <div className="relative w-full h-full flex justify-center">
           {project.uiMobileImages.map((src, i) => {
             const totalImages = project.uiMobileImages.length;
             const centerPosition = (totalImages - 1) / 2;
             const distanceFromCenter = i - centerPosition;
             const zIndex = totalImages - Math.abs(distanceFromCenter);
-            const bottomOffset = Math.abs(distanceFromCenter) * 12;  // Reduced for mobile
-            // Adjust horizontal offset for smaller screens:
-            // Use smaller offset on small screens, larger on medium+
+            const bottomOffset = Math.abs(distanceFromCenter) * (windowWidth < 640 ? 8 : 12);
             const horizontalOffset =
               distanceFromCenter *
-              (windowWidth < 640 ? 90 : distanceFromCenter === 0 ? 0 : 160);
+              (windowWidth < 640
+                ? 70
+                : windowWidth < 768
+                ? 110
+                : distanceFromCenter === 0
+                ? 0
+                : 160);
+
+            const imgWidth = windowWidth < 640 ? 140 : 200;
+            const imgHeight = windowWidth < 640 ? 300 : 430;
 
             return (
               <div
@@ -904,12 +914,12 @@ useEffect(() => {
                   bottom: `${bottomOffset}px`,
                 }}
               >
-                <div className="relative border-2 border-green-600 rounded-lg overflow-hidden">
+                <div className="relative border-2 border-green-600 rounded-lg overflow-hidden shadow-md">
                   <Image
                     src={src}
                     alt={`${project.title} mobile UI screen ${i + 1}`}
-                    width={200}
-                    height={430}
+                    width={imgWidth}
+                    height={imgHeight}
                     className="object-contain"
                   />
                 </div>
@@ -922,18 +932,28 @@ useEffect(() => {
 
     {/* Desktop UI Section */}
     {project.uiDesktopImages?.length > 0 && (
-      <div className="relative min-h-[280px] sm:min-h-[350px] w-full flex justify-center items-end overflow-visible px-4">
+      <div
+        className={`relative w-full flex justify-center items-end overflow-visible px-4
+          ${windowWidth < 640 ? 'min-h-[260px]' : windowWidth < 768 ? 'min-h-[320px]' : 'min-h-[350px]'}
+        `}
+      >
         <div className="relative w-full h-full flex justify-center">
           {project.uiDesktopImages.map((src, i) => {
             const totalImages = project.uiDesktopImages.length;
             const centerPosition = (totalImages - 1) / 2;
             const distanceFromCenter = i - centerPosition;
             const zIndex = totalImages - Math.abs(distanceFromCenter);
-            const bottomOffset = Math.abs(distanceFromCenter) * 10;  // Reduced for mobile
-            // Horizontal offset smaller on small screens, larger on medium+
+            const bottomOffset = Math.abs(distanceFromCenter) * (windowWidth < 640 ? 7 : 10);
             const horizontalOffset =
               distanceFromCenter *
-              (windowWidth < 640 ? 100 : 180);
+              (windowWidth < 640
+                ? 80
+                : windowWidth < 768
+                ? 130
+                : 180);
+
+            const imgWidth = windowWidth < 640 ? 280 : 400;
+            const imgHeight = windowWidth < 640 ? 160 : 230;
 
             return (
               <div
@@ -946,12 +966,12 @@ useEffect(() => {
                   bottom: `${bottomOffset}px`,
                 }}
               >
-                <div className="relative border-2 border-green-600 rounded-lg overflow-hidden">
+                <div className="relative border-2 border-green-600 rounded-lg overflow-hidden shadow-md">
                   <Image
                     src={src}
                     alt={`${project.title} desktop UI screen ${i + 1}`}
-                    width={400}
-                    height={230}
+                    width={imgWidth}
+                    height={imgHeight}
                     className="object-contain"
                   />
                 </div>
@@ -963,7 +983,6 @@ useEffect(() => {
     )}
   </div>
 )}
-
 
 
 {/* Updated Preview Section */}
