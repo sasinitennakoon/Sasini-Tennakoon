@@ -917,14 +917,15 @@ useEffect(() => {
         <h2 className="text-6xl font-semibold mb-12 text-center text-black font-[lato]">UI Walkthrough</h2>
         <StoryCard project={project} />
       </div>
+
 {/* Footer */}
-<footer className="w-full bg-[#2C6E49] text-white py-8 mt-20">
-  <div className="text-center">
+<div className="relative left-1/2 right-1/2 mx-[-50vw] w-screen bg-[#2C6E49]">
+  <div className="mx-auto max-w-[1800px] text-white py-8 px-6 text-center">
     <p className="text-mm">
       &copy; {new Date().getFullYear()} Sasini Tennakoon. All rights reserved.
     </p>
   </div>
-</footer>
+</div>
 
       {showScrollNav && (
   <>
