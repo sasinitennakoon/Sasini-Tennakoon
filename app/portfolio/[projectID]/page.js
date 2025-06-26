@@ -874,39 +874,48 @@ useEffect(() => {
 {/* UI Images */}
 {(project.uiMobileImages?.length > 0 || project.uiDesktopImages?.length > 0) && (
   <div className="max-w-6xl mx-auto mt-16 mb-20 px-4 sm:px-6">
-    <h2 className="text-6xl font-semibold mb-6 text-center text-black font-[lato]">UI Design</h2>
+    <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold mb-6 text-center text-black font-[lato]">
+      UI Design
+    </h2>
 
     {/* Mobile UI Section */}
     {project.uiMobileImages?.length > 0 && (
       <div
-        className={`relative w-full flex justify-center items-end overflow-visible px-4
-          ${windowWidth < 640 ? 'h-[320px]' : windowWidth < 768 ? 'h-[450px]' : 'h-[600px]'}
-        `}
+        className={`relative w-full flex justify-center items-end overflow-visible ${
+          windowWidth < 480
+            ? 'h-[280px]'
+            : windowWidth < 640
+            ? 'h-[360px]'
+            : windowWidth < 768
+            ? 'h-[450px]'
+            : 'h-[600px]'
+        }`}
       >
         <div className="relative w-full h-full flex justify-center">
           {project.uiMobileImages.map((src, i) => {
             const totalImages = project.uiMobileImages.length;
-            const centerPosition = (totalImages - 1) / 2;
-            const distanceFromCenter = i - centerPosition;
-            const zIndex = totalImages - Math.abs(distanceFromCenter);
-            const bottomOffset = Math.abs(distanceFromCenter) * (windowWidth < 640 ? 8 : 12);
-            const horizontalOffset =
-              distanceFromCenter *
-              (windowWidth < 640
-                ? 70
-                : windowWidth < 768
-                ? 110
-                : distanceFromCenter === 0
-                ? 0
-                : 160);
+            const center = (totalImages - 1) / 2;
+            const distance = i - center;
+            const zIndex = totalImages - Math.abs(distance);
+            const bottomOffset = Math.abs(distance) * (windowWidth < 640 ? 6 : 10);
 
-            const imgWidth = windowWidth < 640 ? 140 : 200;
-            const imgHeight = windowWidth < 640 ? 300 : 430;
+            const horizontalOffset =
+              distance *
+              (windowWidth < 480
+                ? 45
+                : windowWidth < 640
+                ? 65
+                : windowWidth < 768
+                ? 90
+                : 140);
+
+            const imgWidth = windowWidth < 480 ? 120 : windowWidth < 640 ? 140 : 200;
+            const imgHeight = windowWidth < 480 ? 240 : windowWidth < 640 ? 300 : 430;
 
             return (
               <div
                 key={i}
-                className="absolute transition-all duration-300 hover:scale-110 hover:z-50"
+                className="absolute transition-all duration-300 hover:scale-105 hover:z-50"
                 style={{
                   left: '50%',
                   transform: `translateX(calc(-50% + ${horizontalOffset}px))`,
@@ -933,27 +942,36 @@ useEffect(() => {
     {/* Desktop UI Section */}
     {project.uiDesktopImages?.length > 0 && (
       <div
-        className={`relative w-full flex justify-center items-end overflow-visible px-4
-          ${windowWidth < 640 ? 'min-h-[260px]' : windowWidth < 768 ? 'min-h-[320px]' : 'min-h-[350px]'}
-        `}
+        className={`relative w-full flex justify-center items-end overflow-visible ${
+          windowWidth < 480
+            ? 'min-h-[180px]'
+            : windowWidth < 640
+            ? 'min-h-[240px]'
+            : windowWidth < 768
+            ? 'min-h-[300px]'
+            : 'min-h-[350px]'
+        }`}
       >
         <div className="relative w-full h-full flex justify-center">
           {project.uiDesktopImages.map((src, i) => {
             const totalImages = project.uiDesktopImages.length;
-            const centerPosition = (totalImages - 1) / 2;
-            const distanceFromCenter = i - centerPosition;
-            const zIndex = totalImages - Math.abs(distanceFromCenter);
-            const bottomOffset = Math.abs(distanceFromCenter) * (windowWidth < 640 ? 7 : 10);
+            const center = (totalImages - 1) / 2;
+            const distance = i - center;
+            const zIndex = totalImages - Math.abs(distance);
+            const bottomOffset = Math.abs(distance) * (windowWidth < 640 ? 4 : 8);
+
             const horizontalOffset =
-              distanceFromCenter *
-              (windowWidth < 640
+              distance *
+              (windowWidth < 480
+                ? 55
+                : windowWidth < 640
                 ? 80
                 : windowWidth < 768
-                ? 130
-                : 180);
+                ? 110
+                : 160);
 
-            const imgWidth = windowWidth < 640 ? 280 : 400;
-            const imgHeight = windowWidth < 640 ? 160 : 230;
+            const imgWidth = windowWidth < 480 ? 220 : windowWidth < 640 ? 260 : 400;
+            const imgHeight = windowWidth < 480 ? 120 : windowWidth < 640 ? 160 : 230;
 
             return (
               <div
