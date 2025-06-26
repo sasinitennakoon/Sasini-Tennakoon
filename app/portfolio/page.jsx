@@ -59,25 +59,25 @@ const projects = [
   },
 ];
 
-export default function PortfolioPage() {
-  const [showNavbar, setShowNavbar] = useState(true);
+export default function ProjectDetailPage() {
+  const params = useParams();
+  const router = useRouter();
+
+  // ✅ Add this line
+  const [showScrollNav, setShowScrollNav] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+
+  // ✅ Add this useEffect
   useEffect(() => {
-  let lastScrollY = window.scrollY;
-  const handleScroll = () => {
-    if (window.scrollY < lastScrollY || window.scrollY < 50) {
-      setShowScrollNav(true);
-      setShowNavbar(true);
-    } else {
-      setShowScrollNav(false);
-      setShowNavbar(false);
-    }
-    lastScrollY = window.scrollY;
-  };
-  window.addEventListener('scroll', handleScroll);
-  return () => window.removeEventListener('scroll', handleScroll);
-}, []);
+    const handleScroll = () => {
+      const scrolledDown = window.scrollY > 300;
+      setShowScrollNav(scrolledDown);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
   return (
     <div className="flex flex-col min-h-screen">
       {/* 🔻 Navbar */}
