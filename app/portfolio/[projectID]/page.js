@@ -562,12 +562,9 @@ export default function ProjectDetailPage() {
   const params = useParams();
   const router = useRouter();
 
-  // ✅ Add this line
   const [showScrollNav, setShowScrollNav] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-
-  // ✅ Add this useEffect
   useEffect(() => {
     const handleScroll = () => {
       const scrolledDown = window.scrollY > 300;
@@ -578,7 +575,6 @@ export default function ProjectDetailPage() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-
   // Safely get project ID from params
   const projectId = params?.projectID;
   const project = projectDetails.find(p => p.id === projectId);
@@ -588,9 +584,8 @@ export default function ProjectDetailPage() {
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center p-10">
           <h1 className="text-4xl font-bold text-red-500 mb-4">Project Not Found</h1>
-          {/* eslint-disable-next-line react/no-unescaped-entities */}
           <p className="text-xl mb-6">The project {projectId} doesn&apos;t exist in our portfolio.</p>
-          <button 
+          <button
             onClick={() => router.push('/portfolio')}
             className="bg-[#2C6E49] text-white px-6 py-2 rounded-md hover:bg-[#245239] transition-colors"
           >
@@ -600,6 +595,7 @@ export default function ProjectDetailPage() {
       </div>
     );
   }
+
   const currentIndex = projectDetails.findIndex(p => p.id === projectId);
 
   const goToProject = (direction) => {
@@ -613,96 +609,91 @@ export default function ProjectDetailPage() {
 
   return (
     <main className="bg-white min-h-screen pt-28 px-4 md:px-6">
+
       {/* Navbar */}
-      <nav className="fixed top-0 left-0 w-full z-50 bg-[#2C6E49] h-20 shadow-md px-6 py-4 flex justify-between items-center">
-  <div className="text-2xl sm:text-4xl font-bold text-white">SASINI TENNAKOON</div>
+      <nav className="fixed top-0 left-0 w-full z-50 bg-[#2C6E49] shadow-md px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center">
+        <div className="text-xl sm:text-3xl font-bold text-white">SASINI TENNAKOON</div>
 
-  {/* Desktop Menu */}
-  <div className="hidden md:flex space-x-8 text-lg font-medium text-white font-[Lato]">
-    <Link href="/#home" className="hover:text-white">Home</Link>
-    <Link href="/#about" className="hover:text-white">About</Link>
-    <Link href="/portfolio" className="hover:text-white">My Portfolio</Link>
-    <Link href="/#skills" className="hover:text-white">Profile & Skills</Link>
-    <a href="https://wa.me/94776552988" target="_blank" rel="noopener noreferrer" className="hover:text-white">Contact</a>
-  </div>
+        {/* Desktop Menu */}
+        <div className="hidden md:flex space-x-8 text-base sm:text-lg font-medium text-white font-[Lato]">
+          <Link href="/#home" className="hover:text-white">Home</Link>
+          <Link href="/#about" className="hover:text-white">About</Link>
+          <Link href="/portfolio" className="hover:text-white">My Portfolio</Link>
+          <Link href="/#skills" className="hover:text-white">Profile & Skills</Link>
+          <a href="https://wa.me/94776552988" target="_blank" rel="noopener noreferrer" className="hover:text-white">Contact</a>
+        </div>
 
-  {/* Mobile Menu Button */}
-  <div className="md:hidden">
-    <button onClick={() => setMobileMenuOpen(prev => !prev)} className="text-white text-2xl">☰</button>
-  </div>
+        {/* Mobile Menu Button */}
+        <div className="md:hidden">
+          <button onClick={() => setMobileMenuOpen(prev => !prev)} className="text-white text-2xl">☰</button>
+        </div>
 
-  {/* Mobile Dropdown */}
-  {mobileMenuOpen && (
-    <div className="absolute top-20 left-0 w-full bg-[#2C6E49] text-white flex flex-col space-y-4 py-4 px-6 md:hidden z-50">
-      <Link href="/#home" className="hover:text-white">Home</Link>
-      <Link href="/#about" className="hover:text-white">About</Link>
-      <Link href="/portfolio" className="hover:text-white">My Portfolio</Link>
-      <Link href="/#skills" className="hover:text-white">Profile & Skills</Link>
-      <a href="https://wa.me/94776552988" target="_blank" rel="noopener noreferrer" className="hover:text-white">Contact</a>
-    </div>
-  )}
-</nav>
-
+        {/* Mobile Dropdown */}
+        {mobileMenuOpen && (
+          <div className="absolute top-full left-0 w-full bg-[#2C6E49] text-white flex flex-col space-y-4 py-4 px-6 md:hidden z-50">
+            <Link href="/#home" className="hover:text-white">Home</Link>
+            <Link href="/#about" className="hover:text-white">About</Link>
+            <Link href="/portfolio" className="hover:text-white">My Portfolio</Link>
+            <Link href="/#skills" className="hover:text-white">Profile & Skills</Link>
+            <a href="https://wa.me/94776552988" target="_blank" rel="noopener noreferrer" className="hover:text-white">Contact</a>
+          </div>
+        )}
+      </nav>
 
       {/* Project Header */}
       <div className="text-center mb-12">
-  <h1 className="text-3xl md:text-8xl font-bold text-black font-[Lato] mb-2">
-    {project.title}
-  </h1>
-  <p className="text-lg md:text-xl text-black">{project.subtitle}</p>
+        <h1 className="text-3xl md:text-8xl font-bold text-black font-[Lato] mb-2">{project.title}</h1>
+        <p className="text-lg md:text-xl text-black">{project.subtitle}</p>
 
-  <div className="flex justify-between mt-6 px-4 md:px-0 max-w-6xl mx-auto">
-    {/* Previous Button */}
-    <button
-      onClick={() => goToProject('prev')}
-      disabled={currentIndex === 0}
-      className={`inline-flex items-center gap-2 px-5 py-2 rounded-full text-sm md:text-base font-semibold transition-all duration-300
-        ${currentIndex === 0 
-          ? 'text-black bg-gray-100 cursor-not-allowed' 
-          : 'bg-gradient-to-r from-green-700 to-green-500 text-white hover:scale-105 hover:shadow-lg'
-        }`}
-    >
-      ← Previous
-    </button>
+        <div className="flex justify-between mt-6 px-4 md:px-0 max-w-6xl mx-auto">
+          {/* Previous Button */}
+          <button
+            onClick={() => goToProject('prev')}
+            disabled={currentIndex === 0}
+            className={`inline-flex items-center gap-2 px-5 py-2 rounded-full text-sm md:text-base font-semibold transition-all duration-300
+              ${currentIndex === 0
+                ? 'text-black bg-gray-100 cursor-not-allowed'
+                : 'bg-gradient-to-r from-green-700 to-green-500 text-white hover:scale-105 hover:shadow-lg'
+              }`}
+          >
+            ← Previous
+          </button>
 
-    {/* Next Button */}
-    <button
-      onClick={() => goToProject('next')}
-      disabled={currentIndex === projectDetails.length - 1}
-      className={`inline-flex items-center gap-2 px-5 py-2 rounded-full text-sm md:text-base font-semibold transition-all duration-300
-        ${currentIndex === projectDetails.length - 1 
-          ? 'text-gray-400 bg-gray-100 cursor-not-allowed' 
-          : 'bg-gradient-to-r from-green-700 to-green-500 text-white hover:scale-105 hover:shadow-lg'
-        }`}
-    >
-      Next →
-    </button>
-  </div>
-</div>
-
+          {/* Next Button */}
+          <button
+            onClick={() => goToProject('next')}
+            disabled={currentIndex === projectDetails.length - 1}
+            className={`inline-flex items-center gap-2 px-5 py-2 rounded-full text-sm md:text-base font-semibold transition-all duration-300
+              ${currentIndex === projectDetails.length - 1
+                ? 'text-gray-400 bg-gray-100 cursor-not-allowed'
+                : 'bg-gradient-to-r from-green-700 to-green-500 text-white hover:scale-105 hover:shadow-lg'
+              }`}
+          >
+            Next →
+          </button>
+        </div>
+      </div>
 
       {/* Cover Image */}
-<div className="mb-10 w-full flex justify-center">
-  <div className="relative w-[1440px] h-[398px] overflow-hidden rounded-lg shadow-lg">
-    <Image 
-      src={project.coverImage} 
-      alt={`${project.title} cover image`} 
-      fill
-      className="object-cover"
-      priority
-      unoptimized
-    />
-  </div>
-</div>
-
-
+      <div className="mb-10 w-full flex justify-center px-4">
+        <div className="relative w-full max-w-[1440px] aspect-[1440/398] overflow-hidden rounded-lg shadow-lg">
+          <Image
+            src={project.coverImage}
+            alt={`${project.title} cover image`}
+            fill
+            className="object-cover"
+            priority
+            unoptimized
+          />
+        </div>
+      </div>
 
       {/* Project Details */}
       <div className="max-w-6xl mx-auto space-y-20 mb-16 px-4 md:px-6">
         {/* Overview */}
         <div className="flex flex-col md:flex-row items-center md:items-start gap-2 md:gap-4">
           <div className="w-full md:w-[20%] flex justify-end">
-            <div className="flex items-center text-lg md:text-3xl font-semibold text-right h-24">
+            <div className="flex items-center text-lg md:text-3xl font-semibold text-black text-right h-24">
               Overview
             </div>
           </div>
@@ -715,7 +706,7 @@ export default function ProjectDetailPage() {
         {/* Problem */}
         <div className="flex flex-col md:flex-row-reverse items-center md:items-start gap-2 md:gap-4">
           <div className="w-full md:w-[20%] flex justify-start md:justify-start">
-            <div className="flex items-center text-lg md:text-4xl font-semibold text-left h-24">
+            <div className="flex items-center text-lg md:text-4xl font-semibold text-black text-left h-24">
               Problem
             </div>
           </div>
@@ -728,7 +719,7 @@ export default function ProjectDetailPage() {
         {/* Research */}
         <div className="flex flex-col md:flex-row items-center md:items-start gap-2 md:gap-4">
           <div className="w-full md:w-[20%] flex justify-end">
-            <div className="flex items-center text-lg md:text-4xl font-semibold text-right h-24">
+            <div className="flex items-center text-lg md:text-4xl font-semibold text-black text-right h-24">
               Research
             </div>
           </div>
@@ -738,7 +729,6 @@ export default function ProjectDetailPage() {
           </div>
         </div>
       </div>
-
 
       {/* Wireframes Section */}
       {project.wireframes?.length > 0 && (
@@ -752,9 +742,9 @@ export default function ProjectDetailPage() {
 
               return (
                 <div key={i} className={`relative w-full ${heightClass}`}>
-                  <Image 
-                    src={src} 
-                    alt={`${project.title} wireframe ${i + 1}`} 
+                  <Image
+                    src={src}
+                    alt={`${project.title} wireframe ${i + 1}`}
                     fill
                     className="object-contain"
                   />
@@ -765,7 +755,7 @@ export default function ProjectDetailPage() {
         </div>
       )}
 
-     {/* Components Section */}
+      {/* Components Section */}
       <div className="max-w-6xl mx-auto mt-20 mb-24 px-4 md:px-6">
         <h2 className="text-6xl font-bold text-center text-black font-[lato] mb-12">Design System</h2>
 
@@ -794,11 +784,11 @@ export default function ProjectDetailPage() {
         {project.designSystem?.colors && (
           <>
             <h3 className="text-2xl font-semibold mb-6" style={{ color: primaryColor }}>Color Palette</h3>
-            
+
             {/* Main color blocks */}
             <div className="grid grid-cols-2 sm:grid-cols-5 gap-4 max-w-4xl mx-auto mb-8">
               {project.designSystem.colors.map((col, i) => (
-                <div 
+                <div
                   key={i}
                   className={`relative h-40 rounded-xl overflow-hidden shadow-lg group transition-all duration-300 hover:scale-105 ${col.border || ''}`}
                   style={{ backgroundColor: col.color }}
@@ -837,145 +827,101 @@ export default function ProjectDetailPage() {
         )}
       </div>
 
-
       {/* UI Images */}
-{(project.uiMobileImages?.length > 0 || project.uiDesktopImages?.length > 0) && (
-  <div className="max-w-6xl mx-auto mt-16 mb-20">
-    <h2 className="text-6xl font-semibold mb-6 text-center text-black font-[lato]">UI Design</h2>
+      {(project.uiMobileImages?.length > 0 || project.uiDesktopImages?.length > 0) && (
+        <div className="max-w-6xl mx-auto mt-16 mb-20">
+          <h2 className="text-6xl font-semibold mb-6 text-center text-black font-[lato]">UI Design</h2>
 
-    {/* Mobile UI Section */}
-    {project.uiMobileImages?.length > 0 && (
-      <div className="relative h-[500px] md:h-[600px] w-full flex justify-center items-end overflow-visible px-4">
-        <div className="relative w-full h-full flex justify-center">
-          {project.uiMobileImages.map((src, i) => {
-            const totalImages = project.uiMobileImages.length;
-            const centerPosition = (totalImages - 1) / 2;
-            const distanceFromCenter = i - centerPosition;
-            const zIndex = totalImages - Math.abs(distanceFromCenter);
-            const bottomOffset = Math.abs(distanceFromCenter) * 20;
-            const horizontalOffset = distanceFromCenter * 160;
-
-            return (
-              <div
-                key={i}
-                className="absolute transition-all duration-300 hover:scale-110 hover:z-50"
-                style={{
-                  left: '50%',
-                  transform: `translateX(calc(-50% + ${horizontalOffset}px))`,
-                  zIndex,
-                  bottom: `${bottomOffset}px`,
-                }}
-              >
-                <div className="relative border-2 border-green-600 rounded-lg overflow-hidden">
-                  <Image
-                    src={src}
-                    alt={`${project.title} mobile UI screen ${i + 1}`}
-                    width={200}
-                    height={430}
-                    className="object-contain"
-                  />
-                </div>
+          {/* Mobile UI Section */}
+          {project.uiMobileImages?.length > 0 && (
+            <div className="overflow-x-auto px-4">
+              <div className="relative min-h-[450px] md:min-h-[600px] w-max flex space-x-4">
+                {project.uiMobileImages.map((src, i) => (
+                  <div
+                    key={i}
+                    className="relative w-[200px] h-[430px] flex-shrink-0 border-2 border-green-600 rounded-lg overflow-hidden"
+                  >
+                    <Image
+                      src={src}
+                      alt={`${project.title} mobile UI screen ${i + 1}`}
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                ))}
               </div>
-            );
-          })}
-        </div>
-      </div>
-    )}
+            </div>
+          )}
 
-    {/* Desktop UI Section */}
-    {project.uiDesktopImages?.length > 0 && (
-      <div className="relative min-h-[350px] w-full flex justify-center items-end overflow-visible px-4">
-        <div className="relative w-full h-full flex justify-center">
-          {project.uiDesktopImages.map((src, i) => {
-            const totalImages = project.uiDesktopImages.length;
-            const centerPosition = (totalImages - 1) / 2;
-            const distanceFromCenter = i - centerPosition;
-            const zIndex = totalImages - Math.abs(distanceFromCenter);
-            const bottomOffset = Math.abs(distanceFromCenter) * 15;
-            const horizontalOffset = distanceFromCenter * 180;
-
-            return (
-              <div
-                key={i}
-                className="absolute transition-all duration-300 hover:scale-105 hover:z-50"
-                style={{
-                  left: '50%',
-                  transform: `translateX(calc(-50% + ${horizontalOffset}px))`,
-                  zIndex,
-                  bottom: `${bottomOffset}px`,
-                }}
-              >
-                <div className="relative border-2 border-green-600 rounded-lg overflow-hidden">
-                  <Image
-                    src={src}
-                    alt={`${project.title} desktop UI screen ${i + 1}`}
-                    width={400}
-                    height={230}
-                    className="object-contain"
-                  />
-                </div>
+          {/* Desktop UI Section */}
+          {project.uiDesktopImages?.length > 0 && (
+            <div className="overflow-x-auto px-4">
+              <div className="relative min-h-[230px] w-max flex space-x-6">
+                {project.uiDesktopImages.map((src, i) => (
+                  <div
+                    key={i}
+                    className="relative w-[400px] h-[230px] flex-shrink-0 border-2 border-green-600 rounded-lg overflow-hidden"
+                  >
+                    <Image
+                      src={src}
+                      alt={`${project.title} desktop UI screen ${i + 1}`}
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                ))}
               </div>
-            );
-          })}
+            </div>
+          )}
         </div>
-      </div>
-    )}
-  </div>
-)}
+      )}
 
-
-
-
-
-{/* Updated Preview Section */}
+      {/* Updated Preview Section */}
       <div className="max-w-6xl mx-auto mt-16 mb-20 px-4">
         <h2 className="text-6xl font-semibold mb-12 text-center text-black font-[lato]">UI Walkthrough</h2>
         <StoryCard project={project} />
       </div>
 
-{/* Footer */}
-<div className="relative left-1/2 right-1/2 mx-[-50vw] w-screen bg-[#2C6E49]">
-  <div className="mx-auto max-w-[1800px] text-white py-8 px-6 text-center">
-    <p className="text-mm">
-      &copy; {new Date().getFullYear()} Sasini Tennakoon. All rights reserved.
-    </p>
-  </div>
-</div>
+      {/* Footer */}
+      <div className="relative left-1/2 right-1/2 mx-[-50vw] w-screen bg-[#2C6E49]">
+        <div className="mx-auto max-w-[1800px] text-white py-8 px-6 text-center">
+          <p className="text-mm">
+            &copy; {new Date().getFullYear()} Sasini Tennakoon. All rights reserved.
+          </p>
+        </div>
+      </div>
 
       {showScrollNav && (
-  <>
-    {/* Floating Previous Button (Left) */}
-    <button
-      onClick={() => goToProject('prev')}
-      disabled={currentIndex === 0}
-      className={`fixed left-4 top-1/2 transform -translate-y-1/2 z-50 p-3 rounded-full shadow-lg transition-all duration-300 ${
-        currentIndex === 0
-          ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
-          : 'bg-green-700 text-white hover:bg-green-600 hover:scale-105'
-      }`}
-      aria-label="Previous Project"
-    >
-      ←
-    </button>
+        <>
+          {/* Floating Previous Button (Left) */}
+          <button
+            onClick={() => goToProject('prev')}
+            disabled={currentIndex === 0}
+            className={`fixed left-4 top-1/2 transform -translate-y-1/2 z-50 p-3 rounded-full shadow-lg transition-all duration-300 ${
+              currentIndex === 0
+                ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
+                : 'bg-green-700 text-white hover:bg-green-600 hover:scale-105'
+            }`}
+            aria-label="Previous Project"
+          >
+            ←
+          </button>
 
-    {/* Floating Next Button (Right) */}
-    <button
-      onClick={() => goToProject('next')}
-      disabled={currentIndex === projectDetails.length - 1}
-      className={`fixed right-4 top-1/2 transform -translate-y-1/2 z-50 p-3 rounded-full shadow-lg transition-all duration-300 ${
-        currentIndex === projectDetails.length - 1
-          ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
-          : 'bg-green-700 text-white hover:bg-green-600 hover:scale-105'
-      }`}
-      aria-label="Next Project"
-    >
-      →
-    </button>
-  </>
-)}
-
-
+          {/* Floating Next Button (Right) */}
+          <button
+            onClick={() => goToProject('next')}
+            disabled={currentIndex === projectDetails.length - 1}
+            className={`fixed right-4 top-1/2 transform -translate-y-1/2 z-50 p-3 rounded-full shadow-lg transition-all duration-300 ${
+              currentIndex === projectDetails.length - 1
+                ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
+                : 'bg-green-700 text-white hover:bg-green-600 hover:scale-105'
+            }`}
+            aria-label="Next Project"
+          >
+            →
+          </button>
+        </>
+      )}
     </main>
-    
   );
 }
