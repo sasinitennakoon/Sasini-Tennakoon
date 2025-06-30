@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "Sasini Tennakoon",
   description: "UX/UI Designer & Developer Portfolio",
+  icons :{
+    icon : '/Favicon.png'
+  }
 };
 
 export default function RootLayout({ children }) {
