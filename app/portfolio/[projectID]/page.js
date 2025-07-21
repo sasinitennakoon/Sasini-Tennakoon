@@ -279,7 +279,7 @@ const PersonaCard = ({ name, role, demographics, goals, frustrations, quote,tech
         </div>
         
         <div className="bg-gray-50 p-4 rounded-lg">
-          <p className="italic text-gray-700">"{quote}"</p>
+          <p className="italic text-gray-700">&quot;{quote}&quot;</p>
         </div>
         <div className="mb-4">
           <h4 className="font-semibold text-gray-700 mb-1">Tech Comfort</h4>
@@ -885,7 +885,7 @@ useEffect(() => {
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center p-10">
           <h1 className="text-4xl font-bold text-red-500 mb-4">Project Not Found</h1>
-          {/* eslint-disable-next-line react/no-unescaped-entities */}
+   
           <p className="text-xl mb-6">The project {projectId} doesn&apos;t exist in our portfolio.</p>
           <button 
             onClick={() => router.push('/portfolio')}
