@@ -4,8 +4,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const projects = [
-  { id: 1, title: "BookNest", image: "/medi link.jpg", link: "/portfolio/medi-link" },
-  { id: 2, title: "BookNest", image: "/event desk.jpg", link: "/portfolio/event-desk" },
+  { id: 1, title: "MediLink", image: "/medi link.jpg", link: "/portfolio/medi-link" },
+  { id: 2, title: "Event Desk", image: "/event desk.jpg", link: "/portfolio/event-desk" },
   { id: 3, title: "BookNest", image: "/BookNest.jpg", link: "/portfolio/book-nest" },
   { id: 4, title: "Eco Shopper", image: "/Echo.jpg", link: "/portfolio/eco-shopper" },
   { id: 5, title: "Waste Wizard", image: "/wast.jpg", link: "/portfolio/waste-wizard" },

@@ -474,7 +474,7 @@ const projectDetails = [
     coverImage: '/images/Cover/Ev.png',
     wireframes: ['/images/event/log.png', '/images/event/2.png', '/images/event/3.png','/images/event/4.png'],
     uiMobileImages: [ ],
-    uiDesktopImages:['/images/event/Login page.png','/images/event/Overview Page.png','/images/event/Create event page.png','/images/event/Event Details.png','/images/event/Attendee Insights.png'],
+    uiDesktopImages:['/images/event/Login Page.png','/images/event/Overview Page.png','/images/event/Create event page.png','/images/event/Event Details.png','/images/event/Attendee Insights.png'],
     designSystem: {
       typography: [
         {
