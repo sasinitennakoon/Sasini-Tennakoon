@@ -57,7 +57,7 @@ export default function Home() {
   return (
     <>
       <main id="home" className="relative min-h-screen w-full">
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/landing bg.jpg')" }}></div>
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('/landing bg-min.jpg')" }}></div>
         <div className="relative z-10 flex items-center justify-center min-h-screen px-4 text-center">
           <div>
             <h1 className="text-4xl sm:text-6xl font-bold text-black mb-2 drop-shadow-md">SASINI TENNAKOON</h1>
@@ -165,7 +165,7 @@ export default function Home() {
                 <div className="text-gray-900">
                   <h4 className="text-xl font-semibold">Business Analyst - Intern</h4>
                   <p className="mb-1">VizuaMatix (Pvt) Ltd</p>
-                  <p className="text-sm">19 December 2024 - Present</p>
+                  <p className="text-sm">19 December 2024 - 16 July 2025</p>
                 </div>
               </div>
             </div>

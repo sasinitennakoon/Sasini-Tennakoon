@@ -5,6 +5,24 @@ import Image from 'next/image';
 
 const projects = [
   {
+    title: 'MediLink',
+    subtitle: 'Connecting patients, doctors, and staff effortlessly.',
+    description:
+      'A healthcare platform that streamlines appointment booking, doctor schedules, and clinic management.',
+    image: '/medi link.jpg',
+    tags: ['Figma', 'UI Design', 'Website', 'Individual','Latest'],
+    link: '/portfolio/medi-link',
+  },
+  {
+    title: 'Event Desk',
+    subtitle: 'A smart platform for streamlining event management and guest coordination.',
+    description:
+      'An intuitive tool designed to help organizers manage registrations, schedules, and guest attendance with ease.',
+    image: '/event desk.jpg',
+    tags: ['Figma', 'UI Design', 'Web App', 'Assesment'],
+    link: '/portfolio/event-desk',
+  },
+  {
     title: 'BookNest',
     subtitle: 'A social app for book lovers',
     description:
@@ -55,7 +73,7 @@ const projects = [
     description:
       'A modern and intuitive website designed to highlight unique coconut cosmetic products.',
     image: '/kokos.jpg',
-    tags: ['Figma', 'UI Design', 'Mobile App', 'Group', 'HCI Module'],
+    tags: ['Figma', 'UI Design', 'Website', 'Group', 'HCI Module'],
     link: '/portfolio/kokos',
   },
 ];

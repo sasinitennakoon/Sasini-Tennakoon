@@ -5,6 +5,8 @@ import Image from 'next/image';
 import { Bellota_Text, Cormorant_Garamond, DM_Sans, Estonia, Geologica, Inknut_Antiqua, Inter, Inder, Libre_Baskerville, Merriweather, Playfair_Display, Poppins, Roboto } from 'next/font/google';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { Figma } from "lucide-react";
+
 
 
 
@@ -78,6 +80,20 @@ const StoryCard = ({ project }) => {
   
   // MANUAL IMAGE OPTION - Add your custom images here
   const manualImages = {
+    'medi-link': [
+      '/images/med/Landing Page.png',
+      '/images/med/Patient Dashboard.png',
+      '/images/med/Doctor Dashboard.png',
+      '/images/med/Receptionist Dashboard.png',
+      '/images/med/Receptionist Dashboard-Doctor Availability.png'
+    ],
+    'event-desk': [
+      '/images/event/Login Page.png',
+      '/images/event/Overview Page.png',
+      '/images/event/Create event page.png',
+      '/images/event/Event Details.png',
+      '/images/event/Attendee Insights.png'
+    ],
     'book-nest': [
       '/images/BookLanding.png',
       '/images/Book shelf.png',
@@ -133,6 +149,20 @@ const StoryCard = ({ project }) => {
   const isMobile = !manualImages[project.id] && project.uiMobileImages?.length > 0;
   
   const descriptions = {
+    'medi-link': [
+      "Landing Page: A clean and welcoming entry point that introduces the platform, highlighting easy appointment booking and seamless clinic managemen ",
+      "Patient Dashboard: A simple, user-friendly dashboard where patients can view appointments, track doctors, and manage their healthcare journey with ease.",
+      "Doctor Dashboard:An organized workspace that allows doctors to manage schedules, view patient details, and streamline their daily tasks efficiently. ",
+      "Receptionist Dahbaord: A centralized hub for staff to manage appointments, patient records, and clinic operations with clarity and speed. ",
+      "Doctor Availability: A dedicated view that lets reception staff quickly update and monitor doctor schedules, ensuring accurate and transparent availability for patients."
+    ],
+    'event-desk': [
+      "Login Page: Simple UI for admins to log into the system.",
+      "Overview Page:  Displays key event stats, revenue, and notification.",
+      "Create Event Page: Detailed view of a single event with metrics and related sessions.",
+      "Event Details Page:Dispaly the informstion related to a paticular event.",
+      "Attendee Insight Page: Visualized attendee demographics and engagement trends"
+    ],
     'book-nest': [
       "Home Screen: A personalized dashboard showing a welcome message, your current reading progress, recommended books, community highlights, and upcoming events.",
       "Book Shelf Screen: Organizes your book collection into categories like All Books, Currently Reading, Want to Read, Finished Reading, and Favourites for easy tracking.",
@@ -290,9 +320,9 @@ const PersonaCard = ({ name, role, demographics, goals, frustrations, quote,tech
   );
 };
 // Project Metadata Component
-const ProjectMetadata = ({ type, duration, tools, role }) => {
+const ProjectMetadata = ({ type, duration, tools, role,figmaLink }) => {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+    <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8">
       <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
         <h3 className="text-sm font-semibold text-gray-500 mb-1">Type</h3>
         <p className="text-lg font-medium">{type}</p>
@@ -309,6 +339,17 @@ const ProjectMetadata = ({ type, duration, tools, role }) => {
         <h3 className="text-sm font-semibold text-gray-500 mb-1">Role</h3>
         <p className="text-lg font-medium">{role}</p>
       </div>
+    {/* Figma link card */}
+      {figmaLink && (
+        <Link
+          href={figmaLink}
+          target="_blank"
+          className="bg-gradient-to-r from-green-700 to-green-500 text-white p-4 rounded-lg shadow-sm border border-gray-200 flex flex-col items-center justify-center hover:scale-105 transition-transform"
+        >
+          <Figma className="w-10 h-6 mb-2" />
+          <span className="text-sm font-semibold">Go to Figma</span>
+        </Link>
+      )}
     </div>
   );
 };
@@ -318,6 +359,156 @@ const ProjectMetadata = ({ type, duration, tools, role }) => {
 const projectDetails = [
 
   {// eslint-disable-next-line react/no-unescaped-entities
+    id: 'medi-link',
+    title: 'MediLink',
+    subtitle: 'Connecting patients, doctors, and staff effortlessly.',
+    metadata: {
+      type: 'Personal Project',
+      duration: '5 Weeks',
+      tools: 'Figma,Miro',
+      role: 'UX Designer (Research, Design, Prototype)',
+      figmaLink: 'https://www.figma.com/design/w3Hh6gHpe943HWxLYLSDTK/MediLink-Online-Appointment-Booking-System?node-id=311-2577&t=ASS4Bm02ITZgq7Pl-1'
+    },
+    description: {
+      overview: "MediLink is a digital healthcare solution created to streamline the communication between patients, doctors, and reception staff in small to mid-sized clinics. The platform enables patients to book appointments easily, doctors to manage their schedules, and staff to oversee clinic operations efficiently. The design emphasizes clarity, trust, and accessibility, ensuring users can navigate sensitive medical tasks with confidence.",
+      problem: "Many small clinics still rely on manual processes for managing appointments and patient records, leading to long waiting times, scheduling conflicts, and inefficient communication between staff and patients. Patients often struggle to find updated doctor availability, while reception staff are burdened with handling repetitive administrative tasks. A solution was needed to simplify these workflows and provide a seamless experience for all stakeholders.",
+      research: " In the research phase, I studied existing healthcare management systems and explored patient feedback on appointment applications. A clear pattern emerged from this research: patients value simplicity above all, as the user base spans from highly tech-savvy individuals to those less familiar with digital platforms. Transparency was also identified as a key need, since patients want immediate visibility of doctor schedules and confirmation of their bookings. Efficiency proved to be equally important for doctors and staff, who required a centralized platform that could be updated quickly and reduce their reliance on manual work. These insights guided the design of MediLink&apos;s core features, including streamlined appointment booking, doctor scheduling, and simplified reception workflows."
+    },
+    personas: [
+      {
+        name: 'Sandamali Dassanayake',
+        role: 'The Patient',
+        demographics: '42, Office Clerk, Kurunegala',
+        goals: 'Wants to avoid time waste, know the doctor arrival and do booking fast',
+        frustrations: 'Long queues and unclear timing',
+        quote: 'I want to do booking fast without wasting my time since I have a busy schedule',
+        image: '/images/personas/clerk.jpg',
+        tech_comfort: 'Intermediate'
+      },
+      {
+        name: 'Dr.Sampath Perera',
+        role: 'Doctor',
+        demographics: '32, General Physician, Kurunegala',
+        goals: ' Wants to view scheduled appointment beforehand and manage his time efficiently',
+        frustrations: 'Sometimes overlapping patients and he has no idea of who is coming or when',
+        quote: 'I want to get a clear idea of my schedule and patients for a particular day ',
+        image: '/images/personas/doc.jpg',
+        tech_comfort: 'Moderate'
+      },
+      {
+        name: 'Imasha Ratnayake',
+        role: 'Receptionist',
+        demographics: '25, Front Desk Executive, Kurunegala',
+        goals: 'Easily manage bookings and patinet flow',
+        frustrations: 'Crowd control',
+        quote: 'I need to manage clinic process easily without giving issues to patients or doctors',
+        image: '/images/personas/rec.jpg',
+        tech_comfort: 'Moderate'
+      }
+    ],
+    coverImage: '/images/Cover/M.png',
+    wireframes: ['/images/med/1.jpg', '/images/med/2.jpg', '/images/med/3.jpg','/images/med/4.jpg','/images/med/5.jpg','/images/med/6.jpg','/images/med/7.jpg','/images/med/8.jpg'],
+    uiMobileImages: [],
+    uiDesktopImages:['/images/med/Patient Dashboard.png','/images/med/Receptionist Dashboard.png','/images/med/Landing Page.png','/images/med/Doctor Dashboard.png','/images/med/Receptionist Dashboard-Doctor Availability.png'],
+    designSystem: {
+      typography: [
+        {
+          name: 'Poppins',
+          className: poppins.className,
+          usage: 'Headings/Subheadings',
+          sample: 'Aa',
+          paragraph: 'Aa, Bb, Cc, Dd, Ee, Ff, Gg ,Hh ,Ii, Jj, Kk ,Ll ,Mm, Nn, Oo, Pp, Qq ,Rr, Ss ,Tt, Uu ,Vv ,Ww ,Xx ,Yy, Zz',
+          numbers: '1234567890'
+        },
+        {
+          name: 'Inter',
+          className: inter.className,
+          usage: 'Body text',
+          sample: 'Aa',
+          paragraph: 'Aa, Bb, Cc, Dd, Ee, Ff, Gg ,Hh ,Ii, Jj, Kk ,Ll ,Mm, Nn, Oo, Pp, Qq ,Rr, Ss ,Tt, Uu ,Vv ,Ww ,Xx ,Yy, Zz',
+          numbers: '1234567890'
+        }
+      ],
+      colors: [
+        { color: '#007BFF', name: 'Vivid Blue', text: 'text-white' },
+        { color: '#6C757D', name: 'Pompeii Ash', text: 'text-white' },
+        { color: '#F8F9FA', name: 'Ghost White', text: 'text-black', border: 'border border-gray-200' },
+        { color: '#212529', name: 'Dark Gunmetal', text: 'text-white' },
+        { color: '#DC3545', name: 'Red', text: 'text-white' }
+      ],
+      primaryColor: '#000000'
+    },
+    feedback: "Users appreciated the clean layout and straightforward appointment booking process. Doctors found the scheduling feature practical and time-saving, while reception staff valued having all records accessible in one place. Some feedback suggested adding automated reminders for patients and a prescription management feature for doctors.",
+    reflection: "MediLink allowed me to explore multi-role user flows, balancing the needs of patients, doctors, and staff within one platform. I learned the importance of accessibility in healthcare interfaces and how small details—like confirmation messages and clear status indicators—can build user trust. This project reinforced my ability to design for efficiency and reliability in sensitive, real-world contexts.",
+  },
+    
+
+  {// eslint-disable-next-line react/no-unescaped-entities
+    id: 'event-desk',
+    title: 'Event Desk',
+    subtitle: 'A smart platform for streamlining event management and guest coordination.',
+    metadata: {
+      type: 'Assesment',
+      duration: '24 Hours',
+      tools: 'Figma',
+      role: 'UX Designer ',
+      figmaLink: 'https://www.figma.com/design/1xxsktD3iowsryxDy4VHyH/Event-Desk-Booking---Management-Web-App?node-id=0-1&t=oYhYKgGjvgO5aaup-1'
+    },
+    description: {
+      overview: "Event Desk is a smart event management platform designed to simplify the process of planning and organizing events. It provides a single space where organizers can manage registrations, monitor guest attendance, and track schedules in real time. The interface was designed with simplicity and clarity in mind, allowing users to access the most important information quickly and focus on delivering smooth event experiences.",
+      problem: "Traditional event management often involves juggling multiple tools, manual processes, and scattered communication, which creates inefficiencies and stress for organizers. Common issues include difficulty in tracking registrations, confusion around guest check-ins, and a lack of visibility into live attendance. Event Desk was created to solve these challenges by bringing all essential functions together in one streamlined platform.",
+      research: " To better understand the needs of event organizers, I explored existing event management tools and gathered insights from users who had experience coordinating both small and large-scale events. The research highlighted three recurring needs: a simplified registration process that reduces manual errors, real-time visibility into guest attendance, and a dashboard that presents key information in a clear and accessible way. These findings became the foundation of Event Desk’s design, which emphasizes efficiency and usability for busy event professionals."
+    },
+    personas: [
+      {
+        name: 'Tharindu Deshapriya',
+        role: 'Primary Admin',
+        demographics: '32, Event Coordinaator,Colombo',
+        goals: 'Wants to easily manage registrations, monitor attendance, and ensure events run smoothly without last-minute chaos.',
+        frustrations: 'Juggling multiple spreadsheets and manual processes often leads to errors and wasted time.',
+        quote: 'I just need one place to manage everything registrations, schedules, and attendance without worrying about errors or last-minute chaos.',
+        image: '/images/personas/tharindu.jpg',
+        tech_comfort: 'High'
+      }
+    ],
+    coverImage: '/images/Cover/Ev.png',
+    wireframes: ['/images/event/log.png', '/images/event/2.png', '/images/event/3.png','/images/event/4.png'],
+    uiMobileImages: [ ],
+    uiDesktopImages:['/images/event/login page.png','/images/event/Overview Page.png','/images/event/Create event page.png','/images/event/Event Details.png','/images/event/Attendee Insights.png'],
+    designSystem: {
+      typography: [
+        {
+          name: 'Poppins',
+          className: poppins.className,
+          usage: 'Headings',
+          sample: 'Aa',
+          paragraph: 'Aa, Bb, Cc, Dd, Ee, Ff, Gg ,Hh ,Ii, Jj, Kk ,Ll ,Mm, Nn, Oo, Pp, Qq ,Rr, Ss ,Tt, Uu ,Vv ,Ww ,Xx ,Yy, Zz',
+          numbers: '1234567890'
+        },
+        {
+          name: 'Inter',
+          className: inter.className,
+          usage: 'Body text',
+          sample: 'Aa',
+          paragraph: 'Aa, Bb, Cc, Dd, Ee, Ff, Gg ,Hh ,Ii, Jj, Kk ,Ll ,Mm, Nn, Oo, Pp, Qq ,Rr, Ss ,Tt, Uu ,Vv ,Ww ,Xx ,Yy, Zz',
+          numbers: '1234567890'
+        }
+      ],
+      colors: [
+        { color: '#6A35FF', name: 'Purple/Violet', text: 'text-white' },
+        { color: '#FFF7F2', name: 'Very Pale Orange', text: 'text-black' },
+        { color: '#F8FAFF', name: 'Tinted Blue', text: 'text-black', border: 'border border-gray-200' },
+        { color: '#2D3958', name: 'Very dark, desaturated shade of blue', text: 'text-white' },
+        { color: '#F3EFFF', name: 'Very pale shade of lavender or purple', text: 'text-black' }
+      ],
+      primaryColor: '#000000'
+    },
+    feedback: "Early users praised the platform’s clean layout and the ease of handling registrations and guest lists. The real-time attendance tracking feature was particularly well received for helping organizers make quick, informed decisions during events. Some suggestions included adding customizable reporting features and expanding the check-in system with QR codes for faster entry",
+    reflection: "Event Desk gave me the opportunity to explore the complexities of designing for time-sensitive environments where efficiency is crucial. I learned how to balance the needs of different user roles within the same system while keeping the interface simple and intuitive. This project reinforced the value of designing solutions that reduce stress for users and allow them to focus on what truly matters—delivering a successful event."
+  },
+    
+
+  {// eslint-disable-next-line react/no-unescaped-entities
     id: 'book-nest',
     title: 'BookNest',
     subtitle: 'A social app for book lovers',
@@ -325,7 +516,8 @@ const projectDetails = [
       type: 'Personal Project',
       duration: '3 Weeks',
       tools: 'Figma',
-      role: 'UX Designer (Research, Design, Prototype)'
+      role: 'UX Designer (Research, Design, Prototype)',
+      figmaLink: 'https://www.figma.com/design/XFCbIW2bF9mZVT0nTgYbks/BookNest-Mobile-App?node-id=0-1&t=Oc3bSfmfKdrVQ9dj-1'
     },
     description: {
       overview: "BookNest is a mobile application designed for book lovers to connect, share, and discover new reads in a vibrant, social environment. Inspired by the idea of bringing together a community of readers, BookNest blends social networking features with personalized book management tools. Users can build virtual bookshelves, track their reading progress, post reviews, and interact with fellow readers through groups and chats. The app is crafted with a clean and cozy UI, ensuring a seamless experience for users across all ages. Whether you're a casual reader or a passionate bibliophile, BookNest offers a dedicated space to celebrate your love for books and connect with like-minded individuals.",
@@ -417,7 +609,8 @@ const projectDetails = [
       type: 'Freelance/Client Project',
       duration: '3 Weeks',
       tools: 'Figma, Next.js, Tailwind.css',
-      role: 'UI/UX Designer, Developer'
+      role: 'UI/UX Designer, Developer',
+      figmaLink: 'https://www.figma.com/design/SFEHvCNaJUcKLAYJEWEkkl/Dinuka-Gunawardana-Portfolio?node-id=0-1&t=CBZwIK3YE41zPW94-1'
     },
     description: {
       overview: "Dinuka's Portfolio is a clean, modern, and responsive web-based portfolio designed for Dinuka Gunawardane, a creative professional specializing in photography, videography, and graphic design. The goal was to create a platform that reflects Dinuka's unique style and showcases his best work to potential clients and collaborators. The website features categorized galleries, a blog section for updates, and a contact form to streamline inquiries. Built with Next.js and Tailwind CSS, the portfolio ensures fast loading, mobile responsiveness, and a user-friendly experience.",
@@ -486,7 +679,9 @@ const projectDetails = [
         { color: '#FFFBEE', name: 'Ivory Cream', text: 'text-black', }
       ],
       primaryColor: '#000000'
-    }
+    },
+    feedback: "Peers and mentors highlighted the portfolio’s clean structure and easy navigation, especially the way project details are broken into sections. The strong visual balance between typography, colors, and media helped maintain professionalism. Some noted that adding more micro-interactions could further enrich the browsing experience.",
+    reflection: "This project taught me how to present my own work as a designer. I realized the importance of structuring information for different audiences—potential clients, recruiters, and collaborators. It also gave me experience in balancing aesthetics with functionality in a personal brand context."
   },
   
 
@@ -498,7 +693,8 @@ const projectDetails = [
       type: 'Personal Project',
       duration: '3 Days',
       tools: 'Figma',
-      role: 'UI/UX Designer'
+      role: 'UI/UX Designer',
+      figmaLink: 'https://www.figma.com/design/ByWkKjUoBr8LRZLpTd2WOO/Eco-Shopper--UI?t=L9pxouXRv721cP0c-1'
     },
     // eslint-disable-next-line react/no-unescaped-entities
     description: {
@@ -569,7 +765,9 @@ const projectDetails = [
         
       ],
       primaryColor: '#000000'
-    }
+    },
+    feedback: "Test users appreciated the straightforward flow for scanning items and tracking eco-friendly choices. The rewards system was praised for motivating sustainable behavior. However, some suggested simplifying certain labels and making the impact data more digestible at a glance.",
+    reflection: "I learned that sustainability-focused apps need both practical value and emotional motivation. Designing Eco Shopper strengthened my ability to translate abstract goals (like “eco impact”) into concrete and engaging user experiences."
   },
   
 
@@ -581,7 +779,8 @@ const projectDetails = [
       type: 'Academic Project',
       duration: '3 Weeks',
       tools: 'Figma',
-      role: 'UI/UX Designer '
+      role: 'UI/UX Designer ',
+      figmaLink: 'https://www.figma.com/design/klbeF1GJI3FES1SvF6hDhH/Untitled?node-id=1-23&t=rDQ6FMdXtnKnp5uH-1'
     },
     // eslint-disable-next-line react/no-unescaped-entities
     description: {
@@ -668,7 +867,9 @@ const projectDetails = [
         
       ],
       primaryColor: '#000000'
-    }
+    },
+    feedback: "Users liked the instant feedback on how to correctly dispose of waste and found the app’s visual guides especially helpful. Feedback suggested adding gamified features to keep users engaged long-term and expanding coverage to more waste categories.",
+    reflection: "This project showed me the power of behavioral design. Small nudges, like immediate feedback and visual cues, can shift user habits. I also learned to prioritize clarity and speed since people use the app in quick decision-making moments."
   },
   
 
@@ -680,7 +881,8 @@ const projectDetails = [
       type: 'Academic Project',
       duration: '2.5 Weeks',
       tools: 'Figma',
-      role: 'UI/UX Designer'
+      role: 'UI/UX Designer',
+      figmaLink: 'https://www.figma.com/design/q1Xl7wq5JGsMNLQZEEYHOc/ICT4D?node-id=0-1&t=pnvCojIsONGbIbS2-1'
     },
     description: {
       overview: 'UtiliTrack is a smart utility management system designed to modernize how households and businesses monitor, manage, and pay for electricity and water usage. Combining the power of ICT and IoT technologies, UtiliTrack integrates smart meters with a user-friendly mobile application to deliver a seamless and intelligent utility experience. With features like real-time consumption tracking, online bill payments, outage notifications, and detailed usage history, UtiliTrack empowers users to take control of their utility consumption while promoting sustainability and operational efficiency.',
@@ -751,9 +953,9 @@ const projectDetails = [
         
       ],
       primaryColor: '#000000'
-    }
-    
-
+    },
+    feedback: "Test participants found the dashboard intuitive and appreciated having all utility usage data in one place. They suggested improving data visualization for quicker comparisons and including reminders for bill deadlines.",
+    reflection: "UtiliTrack taught me the importance of data visualization and usability when dealing with numbers. I realized that visual simplicity is key to empowering users rather than overwhelming them with technical details."
     //previewType: 'mobile',
   },
 
@@ -765,7 +967,8 @@ const projectDetails = [
       type: 'Academic Project',
       duration: '2.5 Weeks',
       tools: 'Figma',
-      role: 'UI Designer'
+      role: 'UI Designer',
+      figmaLink: 'https://www.figma.com/design/DIJhYMYfIzuZICSUfsXV3Z/HCI-UI-Design?node-id=0-1&node-type=canvas&t=lz1OJXAdAOoAzvFi-0'
     },
   // eslint-disable-next-line react/no-unescaped-entities
   description: {
@@ -836,7 +1039,9 @@ const projectDetails = [
         
       ],
       primaryColor: '#000000'
-    }
+    },
+    feedback: "Users enjoyed the minimalistic branding and the smooth ordering process. The coconut-focused product theme was seen as unique and memorable. Suggestions included adding more personalization options in the ordering flow and integrating loyalty features.",
+    reflection: "Through Kokos, I explored how branding and UI go hand-in-hand to create a strong identity. It reinforced the need to design not only for usability but also for emotional resonance that connects users with the brand story."
   },
   
 
@@ -1020,6 +1225,7 @@ useEffect(() => {
     duration={project.metadata.duration}
     tools={project.metadata.tools}
     role={project.metadata.role}
+    figmaLink={project.metadata.figmaLink}
   />
 )}
 

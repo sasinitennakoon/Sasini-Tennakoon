@@ -4,11 +4,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const projects = [
-  { id: 1, title: "BookNest", image: "/BookNest.jpg", link: "/portfolio/book-nest" },
-  { id: 2, title: "Eco Shopper", image: "/Echo.jpg", link: "/portfolio/eco-shopper" },
-  { id: 3, title: "Waste Wizard", image: "/wast.jpg", link: "/portfolio/waste-wizard" },
-  { id: 4, title: "Utilitrack", image: "/utility.jpg", link: "/portfolio/utili-track" },
-  { id: 5, title: "KoKos", image: "/kokos.jpg", link: "/portfolio/kokos" },
+  { id: 1, title: "BookNest", image: "/medi link.jpg", link: "/portfolio/medi-link" },
+  { id: 2, title: "BookNest", image: "/event desk.jpg", link: "/portfolio/event-desk" },
+  { id: 3, title: "BookNest", image: "/BookNest.jpg", link: "/portfolio/book-nest" },
+  { id: 4, title: "Eco Shopper", image: "/Echo.jpg", link: "/portfolio/eco-shopper" },
+  { id: 5, title: "Waste Wizard", image: "/wast.jpg", link: "/portfolio/waste-wizard" },
+  { id: 6, title: "Utilitrack", image: "/utility.jpg", link: "/portfolio/utili-track" },
+  { id: 7, title: "KoKos", image: "/kokos.jpg", link: "/portfolio/kokos" },
   { id: 6, title: "Dinuka Gunawardana Portfolio", image: "/dinu.jpg", link: "/portfolio/dinuka-portfolio" },
 ];
 
